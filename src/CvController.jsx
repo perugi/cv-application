@@ -1,5 +1,5 @@
 import CvSetupPanel from "./CvSetupPanel.jsx";
-import PersonalInfo from "./PersonalInfoPanel.jsx";
+import PersonalInfoPanel from "./PersonalInfoPanel.jsx";
 import EducationPanel from "./EducationPanel.jsx";
 import ExperiencePanel from "./ExperiencePanel.jsx";
 
