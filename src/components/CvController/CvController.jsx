@@ -5,17 +5,17 @@ import PanelFrame from "./Panels/PanelFrame/PanelFrame.jsx";
 
 import styles from "./CvController.module.css";
 
-export default function CvController({ className }) {
+export default function CvController({ className, cvData }) {
   return (
     <div className={`${className} ${styles.cvController}`}>
       <PanelFrame title="Personal Information">
-        <PersonalInfoPanel />
+        <PersonalInfoPanel cvData={cvData} />
       </PanelFrame>
-      <PanelFrame title="Educational Experience">
-        <EducationPanel />
+      <PanelFrame title="Education">
+        <EducationPanel cvData={cvData} />
       </PanelFrame>
-      <PanelFrame title="Professional Experience">
-        <ProfessionalPanel />
+      <PanelFrame title="Experience">
+        <ProfessionalPanel cvData={cvData} />
       </PanelFrame>
     </div>
   );

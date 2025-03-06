@@ -3,6 +3,7 @@ import Footer from "./components/Footer/Footer";
 import CvController from "./components/CvController/CvController";
 import RenderedCv from "./components/RenderedCv/RenderedCv";
 import styles from "./App.module.css";
+import exampleData from "./exampleData";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Header className={styles.header} />
       <main className={styles.main}>
         <div className={`${styles.row} ${styles.container}`}>
-          <CvController className={styles.cvController} />
+          <CvController className={styles.cvController} cvData={exampleData} />
           <RenderedCv className={styles.renderedCv} />
         </div>
       </main>
