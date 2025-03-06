@@ -2,9 +2,9 @@ import PersonalInfoPanel from "./PersonalInfoPanel.jsx";
 import EducationPanel from "./EducationPanel.jsx";
 import ExperiencePanel from "./ExperiencePanel.jsx";
 
-export default function CvController() {
+export default function CvController({ className }) {
   return (
-    <div className="cv-controller">
+    <div className={className}>
       <PersonalInfoPanel />
       <EducationPanel />
       <ExperiencePanel />

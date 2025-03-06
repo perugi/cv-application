@@ -1,3 +1,3 @@
-export default function RenderedCv() {
-  return <div className="rendered-cv">RenderedCv</div>;
+export default function RenderedCv({ className }) {
+  return <div className={className}>RenderedCv</div>;
 }

@@ -1,8 +1,8 @@
 import styles from "./Footer.module.css";
 
-export default function Footer() {
+export default function Footer({ className }) {
   return (
-    <footer>
+    <footer className={className}>
       <a className={styles.ghLink} href="https://github.com/perugi">
         <div>Made by</div>
         <img
