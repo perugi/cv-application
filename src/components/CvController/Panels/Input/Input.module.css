@@ -3,7 +3,8 @@
   margin-top: 1.5rem;
 }
 
-.inputContainer input {
+.inputContainer input,
+.inputContainer textarea {
   width: 100%;
   padding: 0.5rem 1rem;
   border: 1px solid black;
@@ -21,8 +22,14 @@
   transition: transform 0.2s ease-in-out;
 }
 
+.inputContainer:has(textarea) label {
+  top: 1rem;
+}
+
 .inputContainer input:focus + label,
-.inputContainer input:not(:placeholder-shown) + label {
+.inputContainer input:not(:placeholder-shown) + label,
+.inputContainer textarea:focus + label,
+.inputContainer textarea:not(:placeholder-shown) + label {
   top: 0;
   transform: translateY(-100%);
   font-size: 0.8rem;

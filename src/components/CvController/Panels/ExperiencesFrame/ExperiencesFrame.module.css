@@ -1,0 +1,9 @@
+.frame {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addExperience {
+  align-self: center;
+}
