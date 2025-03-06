@@ -1,6 +1,6 @@
-import Footer from "./Footer.jsx";
-import CvController from "./CvController.jsx";
-import RenderedCv from "./RenderedCv.jsx";
+import Footer from "./components/Footer";
+import CvController from "./components/CvController";
+import RenderedCv from "./components/RenderedCv";
 
 function App() {
   return (
