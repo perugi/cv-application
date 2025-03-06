@@ -1,0 +1,12 @@
+.frame {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.panelInfo {
+  display: flex;
+  justify-content: space-between;
+}
