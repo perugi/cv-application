@@ -1,10 +1,12 @@
-import Footer from "./components/Footer";
-import CvController from "./components/CvController";
-import RenderedCv from "./components/RenderedCv";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import CvController from "./components/CvController/CvController";
+import RenderedCv from "./components/RenderedCv/RenderedCv";
 
 function App() {
   return (
     <>
+      <Header />
       <main>
         <CvController />
         <RenderedCv />

@@ -1,0 +1,33 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ghLink {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  margin: 20px 0 10px 0;
+  height: 38px;
+}
+
+.ghLink > div:first-child {
+  width: 130.88px;
+  text-align: end;
+}
+
+.ghLogo {
+  width: 35px;
+  height: 35px;
+  margin: 0 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.ghLink:hover .ghLogo{
+  transform: rotate(360deg) scale(1.2);
+}
