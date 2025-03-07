@@ -1,6 +1,6 @@
 import styles from "./RenderedCv.module.css";
 
-export default function RenderedCv({ className, cvData }) {
+export default function RenderedCv({ className, cvData, cvControl }) {
   // TODO not use index as key
   // TODO make email a mailto link
   const sortedData = {
@@ -23,7 +23,7 @@ export default function RenderedCv({ className, cvData }) {
         </p>
         <p>
           <span className={styles.label}>Email address: </span>
-          {sortedData.email}
+          <a href={`mailto:${sortedData.email}`}>{sortedData.email}</a>
         </p>
         <p>
           <span className={styles.label}>Phone number: </span>
