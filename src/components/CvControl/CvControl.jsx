@@ -2,7 +2,13 @@ import PanelFrame from "../CvInput/Panels/PanelFrame/PanelFrame";
 import styles from "./CvControl.module.css";
 
 export default function CvControl({ className, cvControl, setCvControl }) {
-  console.log({ cvControl });
+  const handleButtonClick = (type, value) => {
+    setCvControl((prev) => ({
+      ...prev,
+      [type]: value,
+    }));
+  };
+
   return (
     <div className={`${className} ${styles.cvControl}`}>
       <PanelFrame title="CV Setup">
@@ -13,6 +19,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.layout === "top" ? styles.active : ""
             }`}
             aria-label="Personal information on top"
+            onClick={() => handleButtonClick("layout", "top")}
           >
             Top
           </button>
@@ -21,6 +28,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.layout === "left" ? styles.active : ""
             }`}
             aria-label="Personal information on left"
+            onClick={() => handleButtonClick("layout", "left")}
           >
             Left
           </button>
@@ -29,6 +37,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.layout === "right" ? styles.active : ""
             }`}
             aria-label="Personal information on right"
+            onClick={() => handleButtonClick("layout", "right")}
           >
             Right
           </button>
@@ -40,6 +49,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.sorting === "newestFirst" ? styles.active : ""
             }`}
             aria-label="Sort experiences from newest to oldest"
+            onClick={() => handleButtonClick("sorting", "newestFirst")}
           >
             From newest to oldest
           </button>
@@ -48,6 +58,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.sorting === "oldestFirst" ? styles.active : ""
             }`}
             aria-label="Sort experiences from oldest to newest"
+            onClick={() => handleButtonClick("sorting", "oldestFirst")}
           >
             From oldest to newest
           </button>
@@ -59,6 +70,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.colorTheme === "lightGray" ? styles.active : ""
             }`}
             aria-label="Light gray color theme"
+            onClick={() => handleButtonClick("colorTheme", "lightGray")}
           >
             Light gray
           </button>
@@ -67,6 +79,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.colorTheme === "lightBlue" ? styles.active : ""
             }`}
             aria-label="Light blue color theme"
+            onClick={() => handleButtonClick("colorTheme", "lightBlue")}
           >
             Light blue
           </button>
@@ -75,6 +88,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.colorTheme === "darkBlue" ? styles.active : ""
             }`}
             aria-label="Dark blue color theme"
+            onClick={() => handleButtonClick("colorTheme", "darkBlue")}
           >
             Dark blue
           </button>
@@ -86,6 +100,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.fontSize === "small" ? styles.active : ""
             }`}
             aria-label="Small font size"
+            onClick={() => handleButtonClick("fontSize", "small")}
           >
             Small
           </button>
@@ -94,6 +109,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.fontSize === "medium" ? styles.active : ""
             }`}
             aria-label="Medium font size"
+            onClick={() => handleButtonClick("fontSize", "medium")}
           >
             Medium
           </button>
@@ -102,6 +118,7 @@ export default function CvControl({ className, cvControl, setCvControl }) {
               cvControl.fontSize === "large" ? styles.active : ""
             }`}
             aria-label="Large font size"
+            onClick={() => handleButtonClick("fontSize", "large")}
           >
             Large
           </button>
