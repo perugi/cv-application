@@ -15,10 +15,7 @@ export default function RenderedCv({ className, cvData }) {
 
   return (
     <div className={`${styles.renderedCv} ${className}`}>
-      <header className={styles.header}>
-        <h1 className={styles.title}>CV Preview</h1>
-        <button className={styles.downloadButton}>Save as PDF</button>
-      </header>
+      <h1 className={styles.title}>CV Preview</h1>
       <section className={styles.personalInfo}>
         <h2 className={styles.fullName}>{sortedData.fullName}</h2>
         <p>
@@ -69,7 +66,9 @@ export default function RenderedCv({ className, cvData }) {
                 {edu.startDate} - {edu.endDate} {edu.location}
               </p>
               <h3>
-                <span className={styles.qualification}>{edu.qualification}</span>
+                <span className={styles.qualification}>
+                  {edu.qualification}
+                </span>
                 {", "}
                 <span className={styles.institution}>{edu.institution}</span>
               </h3>

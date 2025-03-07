@@ -1,8 +1,3 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-
 .fullName {
   font-size: 2rem;
   font-weight: 600;
