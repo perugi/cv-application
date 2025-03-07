@@ -15,9 +15,8 @@ export default function RenderedCv({ className, cvData }) {
 
   return (
     <div className={`${styles.renderedCv} ${className}`}>
-      <h1 className={styles.title}>CV Preview</h1>
       <section className={styles.personalInfo}>
-        <h2 className={styles.fullName}>{sortedData.fullName}</h2>
+        <h1 className={styles.fullName}>{sortedData.fullName}</h1>
         <p>
           <span className={styles.label}>Date of birth: </span>
           {sortedData.dob}

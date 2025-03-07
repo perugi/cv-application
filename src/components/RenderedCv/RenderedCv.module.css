@@ -1,3 +1,10 @@
+.renderedCv {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .fullName {
   font-size: 2rem;
   font-weight: 600;

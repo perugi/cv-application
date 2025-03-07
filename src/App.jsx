@@ -11,7 +11,7 @@ function App() {
     <div className={styles.app}>
       <Header className={styles.header} />
       <main className={styles.main}>
-        <div className={`${styles.row} ${styles.container}`}>
+        <div className={styles.cvContainer}>
           <CvInput className={styles.CvInput} cvData={exampleData} />
           <div>
             <CvControl className={styles.cvControl} />

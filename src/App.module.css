@@ -19,14 +19,16 @@
   justify-content: center;
 }
 
-.container {
+.cvContainer {
   max-width: 1200px;
-}
-
-.row {
   display: flex;
   gap: 20px;
 }
+
+.cvControl {
+  margin-bottom: 20px;
+}
+
 
 .footer {
   grid-area: footer;
