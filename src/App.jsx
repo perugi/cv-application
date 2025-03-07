@@ -12,7 +12,7 @@ function App() {
       <main className={styles.main}>
         <div className={`${styles.row} ${styles.container}`}>
           <CvController className={styles.cvController} cvData={exampleData} />
-          <RenderedCv className={styles.renderedCv} />
+          <RenderedCv className={styles.renderedCv} cvData={exampleData} />
         </div>
       </main>
       <Footer className={styles.footer} />

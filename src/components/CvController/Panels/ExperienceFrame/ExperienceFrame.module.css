@@ -11,6 +11,7 @@
 .panelInfo {
   display: flex;
   justify-content: space-between;
+  align-items: start;
 }
 
 .removeExperience {

@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fullName {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.sectionHeader {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.timeAndLocation {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.sectionHeader,
+.educationItemHeader,
+.experienceItemHeader {
+  border-bottom: 1px solid #ccc;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.position,
+.qualification {
+  text-transform: uppercase;
+}
+
+.position,
+.qualification {
+  font-weight: 600;
+}

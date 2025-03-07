@@ -11,11 +11,11 @@ export default function CvController({ className, cvData }) {
       <PanelFrame title="Personal Information">
         <PersonalInfoPanel cvData={cvData} />
       </PanelFrame>
-      <PanelFrame title="Education">
-        <EducationPanel cvData={cvData} />
-      </PanelFrame>
-      <PanelFrame title="Experience">
+      <PanelFrame title="Work Experience">
         <ProfessionalPanel cvData={cvData} />
+      </PanelFrame>
+      <PanelFrame title="Education and Training">
+        <EducationPanel cvData={cvData} />
       </PanelFrame>
     </div>
   );

@@ -12,7 +12,7 @@ export default function EducationPanel({ cvData }) {
       {schools.map((school, index) => (
         <ExperienceFrame
           key={index}
-          title={`${school.institution}, ${school.degree}`}
+          title={`${school.qualification}, ${school.institution}`}
         >
           <Input
             type="text"
@@ -20,7 +20,12 @@ export default function EducationPanel({ cvData }) {
             label="Institution"
             value={school.institution}
           />
-          <Input type="text" id="degree" label="Degree" value={school.degree} />
+          <Input
+            type="text"
+            id="qualification"
+            label="Title of Qualification Achieved"
+            value={school.qualification}
+          />
           <Input
             type="date"
             id="start-date"

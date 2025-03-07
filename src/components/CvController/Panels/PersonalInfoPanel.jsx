@@ -10,6 +10,7 @@ export default function PersonalInfoPanel({ cvData }) {
         label="Full Name"
         value={cvData.fullName}
       />
+      <Input type="date" id="dob" label="Date of Birth" value={cvData.dob} />
       <Input type="email" id="email" label="Email" value={cvData.email} />
       <Input type="tel" id="phone" label="Phone Number" value={cvData.phone} />
       <Input type="text" id="address" label="Address" value={cvData.address} />
