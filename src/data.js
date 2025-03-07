@@ -1,4 +1,4 @@
-const data = {
+const exampleCvData = {
   fullName: "Sarah Anderson",
   dob: "1990-03-15",
   email: "sarah.anderson@email.com",
@@ -47,4 +47,11 @@ const data = {
   ],
 };
 
-export default data;
+const defaultCvControl = {
+  layout: "top",
+  colorTheme: "lightGray",
+  sorting: "newestFirst",
+  fontSize: "medium",
+};
+
+export { exampleCvData, defaultCvControl };
