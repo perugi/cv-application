@@ -3,11 +3,11 @@ import EducationPanel from "./Panels/EducationPanel.jsx";
 import ProfessionalPanel from "./Panels/ProfessionalPanel.jsx";
 import PanelFrame from "./Panels/PanelFrame/PanelFrame.jsx";
 
-import styles from "./CvController.module.css";
+import styles from "./CvInput.module.css";
 
-export default function CvController({ className, cvData }) {
+export default function CvInput({ className, cvData }) {
   return (
-    <div className={`${className} ${styles.cvController}`}>
+    <div className={`${className} ${styles.cvInput}`}>
       <PanelFrame title="Personal Information">
         <PersonalInfoPanel cvData={cvData} />
       </PanelFrame>

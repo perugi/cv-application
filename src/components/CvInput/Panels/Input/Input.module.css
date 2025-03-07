@@ -35,3 +35,8 @@
   font-size: 0.8rem;
   color: #333;
 }
+
+.inputContainer>textarea {
+  min-height: 6rem;
+  resize: vertical;
+}

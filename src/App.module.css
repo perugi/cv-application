@@ -31,11 +31,3 @@
 .footer {
   grid-area: footer;
 }
-
-.cvController {
-  /* Grid area no longer needed as it's handled by main's grid */
-}
-
-.renderedCv {
-  /* Grid area no longer needed as it's handled by main's grid */
-}

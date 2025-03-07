@@ -2,6 +2,7 @@ import styles from "./RenderedCv.module.css";
 
 export default function RenderedCv({ className, cvData }) {
   // TODO not use index as key
+  // TODO make email a mailto link
   const sortedData = {
     ...cvData,
     experience: cvData.experience.sort(

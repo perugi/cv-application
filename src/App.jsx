@@ -1,6 +1,7 @@
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import CvController from "./components/CvController/CvController";
+import CvInput from "./components/CvInput/CvInput";
+import CvControl from "./components/CvControl/CvControl";
 import RenderedCv from "./components/RenderedCv/RenderedCv";
 import styles from "./App.module.css";
 import exampleData from "./exampleData";
@@ -11,8 +12,11 @@ function App() {
       <Header className={styles.header} />
       <main className={styles.main}>
         <div className={`${styles.row} ${styles.container}`}>
-          <CvController className={styles.cvController} cvData={exampleData} />
-          <RenderedCv className={styles.renderedCv} cvData={exampleData} />
+          <CvInput className={styles.CvInput} cvData={exampleData} />
+          <div>
+            <CvControl className={styles.cvControl} />
+            <RenderedCv className={styles.renderedCv} cvData={exampleData} />
+          </div>
         </div>
       </main>
       <Footer className={styles.footer} />
