@@ -28,7 +28,11 @@ function App() {
               cvControl={cvControl}
               setCvControl={setCvControl}
             />
-            <RenderedCv className={styles.renderedCv} cvData={cvData} />
+            <RenderedCv
+              className={styles.renderedCv}
+              cvData={cvData}
+              cvControl={cvControl}
+            />
           </div>
         </div>
       </main>
