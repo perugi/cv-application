@@ -24,6 +24,14 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         onChange={handleChange}
       />
       <Input
+        type="date"
+        id="dob"
+        label="Date of Birth"
+        value={personalInfo.dob}
+        setCvData={setCvData}
+        onChange={handleChange}
+      />
+      <Input
         type="email"
         id="email"
         label="Email"

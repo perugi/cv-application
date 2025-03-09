@@ -17,28 +17,44 @@ export default function RenderedCv({ className, cvData, cvControl }) {
   return (
     <div className={`${styles.renderedCv} ${className}`}>
       <section className={styles.personalInfo}>
-        <h1 className={styles.fullName}>{sortedData.personalInfo.fullName}</h1>
-        <p>
-          <span className={styles.label}>Date of birth: </span>
-          {sortedData.personalInfo.dob}
-        </p>
-        <p>
-          <span className={styles.label}>Email address: </span>
-          <a href={`mailto:${sortedData.email}`}>{sortedData.personalInfo.email}</a>
-        </p>
-        <p>
-          <span className={styles.label}>Phone number: </span>
-          {sortedData.personalInfo.phone}
-        </p>
-        <p>
-          <span className={styles.label}>Address: </span>
-          {sortedData.personalInfo.address}
-        </p>
+        {sortedData.personalInfo.fullName && (
+          <h1 className={styles.fullName}>
+            {sortedData.personalInfo.fullName}
+          </h1>
+        )}
+        {sortedData.personalInfo.dob && (
+          <p>
+            <span className={styles.label}>Date of birth: </span>
+            {sortedData.personalInfo.dob}
+          </p>
+        )}
+        {sortedData.personalInfo.email && (
+          <p>
+            <span className={styles.label}>Email address: </span>
+            <a href={`mailto:${sortedData.personalInfo.email}`}>
+              {sortedData.personalInfo.email}
+            </a>
+          </p>
+        )}
+        {sortedData.personalInfo.phone && (
+          <p>
+            <span className={styles.label}>Phone number: </span>
+            {sortedData.personalInfo.phone}
+          </p>
+        )}
+        {sortedData.personalInfo.address && (
+          <p>
+            <span className={styles.label}>Address: </span>
+            {sortedData.personalInfo.address}
+          </p>
+        )}
       </section>
-      <section className={styles.aboutMeSection}>
-        <h2 className={styles.sectionHeader}>About Me</h2>
-        <p>{sortedData.personalInfo.bio}</p>
-      </section>
+      {sortedData.personalInfo.bio && (
+        <section className={styles.aboutMeSection}>
+          <h2 className={styles.sectionHeader}>About Me</h2>
+          <p>{sortedData.personalInfo.bio}</p>
+        </section>
+      )}
       <section className={styles.workExperience}>
         <h2 className={styles.sectionHeader}>Work Experience</h2>
         {sortedData.experience.map((exp, index) => (
