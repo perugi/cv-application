@@ -15,10 +15,10 @@ export default function CvInput({ className, cvData, setCvData }) {
       <PanelFrame title="Personal Information">
         <PersonalInfoPanel personalInfo={personalInfo} setCvData={setCvData} />
       </PanelFrame>
-      <PanelFrame title="Work Experience">
+      <PanelFrame title="Work Experience" expandable={false}>
         <ProfessionalPanel experience={experience} setCvData={setCvData} />
       </PanelFrame>
-      <PanelFrame title="Education and Training">
+      <PanelFrame title="Education and Training" expandable={false}>
         <EducationPanel education={education} setCvData={setCvData} />
       </PanelFrame>
     </div>
