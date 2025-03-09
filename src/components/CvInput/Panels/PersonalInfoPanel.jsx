@@ -29,6 +29,7 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         label="Email"
         value={personalInfo.email}
         setCvData={setCvData}
+        onChange={handleChange}
       />
       <Input
         type="tel"
@@ -36,6 +37,7 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         label="Phone Number"
         value={personalInfo.phone}
         setCvData={setCvData}
+        onChange={handleChange}
       />
       <Input
         type="text"
@@ -43,6 +45,7 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         label="Address"
         value={personalInfo.address}
         setCvData={setCvData}
+        onChange={handleChange}
       />
       <Input
         type="textarea"
@@ -50,6 +53,7 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         label="Bio"
         value={personalInfo.bio}
         setCvData={setCvData}
+        onChange={handleChange}
       />
     </>
   );
