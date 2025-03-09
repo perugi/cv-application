@@ -20,7 +20,6 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         id="fullName"
         label="Full Name"
         value={personalInfo.fullName}
-        setCvData={setCvData}
         onChange={handleChange}
       />
       <Input
@@ -28,7 +27,6 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         id="dob"
         label="Date of Birth"
         value={personalInfo.dob}
-        setCvData={setCvData}
         onChange={handleChange}
       />
       <Input
@@ -36,7 +34,6 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         id="email"
         label="Email"
         value={personalInfo.email}
-        setCvData={setCvData}
         onChange={handleChange}
       />
       <Input
@@ -44,7 +41,6 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         id="phone"
         label="Phone Number"
         value={personalInfo.phone}
-        setCvData={setCvData}
         onChange={handleChange}
       />
       <Input
@@ -52,7 +48,6 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         id="address"
         label="Address"
         value={personalInfo.address}
-        setCvData={setCvData}
         onChange={handleChange}
       />
       <Input
@@ -60,7 +55,6 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
         id="bio"
         label="Bio"
         value={personalInfo.bio}
-        setCvData={setCvData}
         onChange={handleChange}
       />
     </>

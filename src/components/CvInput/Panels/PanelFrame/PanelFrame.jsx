@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./PanelFrame.module.css";
 
 export default function PanelFrame({ title, children, expandable = true }) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   function handleExpand() {
     setExpanded((prev) => !prev);
@@ -27,7 +27,7 @@ export default function PanelFrame({ title, children, expandable = true }) {
           </button>
         )}
       </div>
-      {expanded && children}
+      {expandable ? expanded && children : children}
     </div>
   );
 }
