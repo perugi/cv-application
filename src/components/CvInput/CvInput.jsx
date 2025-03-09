@@ -6,16 +6,20 @@ import PanelFrame from "./Panels/PanelFrame/PanelFrame.jsx";
 import styles from "./CvInput.module.css";
 
 export default function CvInput({ className, cvData, setCvData }) {
+  const personalInfo = cvData.personalInfo;
+  const education = cvData.education;
+  const experience = cvData.experience;
+
   return (
     <div className={`${className} ${styles.cvInput}`}>
       <PanelFrame title="Personal Information">
-        <PersonalInfoPanel cvData={cvData} />
+        <PersonalInfoPanel personalInfo={personalInfo} setCvData={setCvData} />
       </PanelFrame>
       <PanelFrame title="Work Experience">
-        <ProfessionalPanel cvData={cvData} />
+        <ProfessionalPanel experience={experience} setCvData={setCvData} />
       </PanelFrame>
       <PanelFrame title="Education and Training">
-        <EducationPanel cvData={cvData} />
+        <EducationPanel education={education} setCvData={setCvData} />
       </PanelFrame>
     </div>
   );

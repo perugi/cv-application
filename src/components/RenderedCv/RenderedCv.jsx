@@ -17,27 +17,27 @@ export default function RenderedCv({ className, cvData, cvControl }) {
   return (
     <div className={`${styles.renderedCv} ${className}`}>
       <section className={styles.personalInfo}>
-        <h1 className={styles.fullName}>{sortedData.fullName}</h1>
+        <h1 className={styles.fullName}>{sortedData.personalInfo.fullName}</h1>
         <p>
           <span className={styles.label}>Date of birth: </span>
-          {sortedData.dob}
+          {sortedData.personalInfo.dob}
         </p>
         <p>
           <span className={styles.label}>Email address: </span>
-          <a href={`mailto:${sortedData.email}`}>{sortedData.email}</a>
+          <a href={`mailto:${sortedData.email}`}>{sortedData.personalInfo.email}</a>
         </p>
         <p>
           <span className={styles.label}>Phone number: </span>
-          {sortedData.phone}
+          {sortedData.personalInfo.phone}
         </p>
         <p>
           <span className={styles.label}>Address: </span>
-          {sortedData.address}
+          {sortedData.personalInfo.address}
         </p>
       </section>
       <section className={styles.aboutMeSection}>
         <h2 className={styles.sectionHeader}>About Me</h2>
-        <p>{sortedData.bio}</p>
+        <p>{sortedData.personalInfo.bio}</p>
       </section>
       <section className={styles.workExperience}>
         <h2 className={styles.sectionHeader}>Work Experience</h2>

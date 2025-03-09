@@ -2,13 +2,11 @@ import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
 import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
-export default function ProfessionalPanel({ cvData }) {
-  const jobs = cvData.experience || [];
-
+export default function ProfessionalPanel({ experience }) {
   // TODO not use index as key
   return (
     <ExperiencesFrame>
-      {jobs.map((job, index) => (
+      {experience.map((job, index) => (
         <ExperienceFrame key={index} title={`${job.employer}, ${job.position}`}>
           <Input
             type="text"

@@ -2,14 +2,11 @@ import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
 import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
-export default function EducationPanel({ cvData }) {
-  const schools = cvData.education || [];
-  console.log({ schools });
-
+export default function EducationPanel({ education }) {
   // TODO not use index as key
   return (
     <ExperiencesFrame>
-      {schools.map((school, index) => (
+      {education.map((school, index) => (
         <ExperienceFrame
           key={index}
           title={`${school.qualification}, ${school.institution}`}

@@ -1,10 +1,12 @@
 const exampleCvData = {
-  fullName: "Sarah Anderson",
-  dob: "1990-03-15",
-  email: "sarah.anderson@email.com",
-  phone: "+1 (555) 123-4567",
-  address: "Portland, Oregon",
-  bio: "Passionate software developer with expertise in modern web technologies. Committed to creating intuitive user experiences and writing clean, maintainable code.",
+  personalInfo: {
+    fullName: "Sarah Anderson",
+    dob: "1990-03-15",
+    email: "sarah.anderson@email.com",
+    phone: "+1 (555) 123-4567",
+    address: "Portland, Oregon",
+    bio: "Passionate software developer with expertise in modern web technologies. Committed to creating intuitive user experiences and writing clean, maintainable code.",
+  },
   education: [
     {
       qualification: "Bachelor of Science in Software Engineering",
