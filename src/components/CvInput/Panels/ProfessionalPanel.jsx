@@ -3,11 +3,10 @@ import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
 export default function ProfessionalPanel({ experience }) {
-  // TODO not use index as key
   return (
     <ExperiencesFrame>
       {experience.map((job, index) => (
-        <ExperienceFrame key={index} title={`${job.employer}, ${job.position}`}>
+        <ExperienceFrame key={job.id} title={`${job.employer}, ${job.position}`}>
           <Input
             type="text"
             id="employer"

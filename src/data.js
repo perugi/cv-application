@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 const exampleCvData = {
   personalInfo: {
     fullName: "Sarah Anderson",
@@ -9,6 +11,7 @@ const exampleCvData = {
   },
   education: [
     {
+      id: uuidv4(),
       qualification: "Bachelor of Science in Software Engineering",
       institution: "Oregon State University",
       startDate: "2008-09-01",
@@ -18,6 +21,7 @@ const exampleCvData = {
         "Core focus on software architecture, algorithms, and web technologies.",
     },
     {
+      id: uuidv4(),
       qualification: "Master of Science in Information Systems",
       institution: "University of Washington",
       startDate: "2012-09-01",
@@ -29,6 +33,7 @@ const exampleCvData = {
   ],
   experience: [
     {
+      id: uuidv4(),
       position: "Frontend Developer",
       employer: "TechStart Solutions",
       startDate: "2014-07-01",
@@ -38,6 +43,7 @@ const exampleCvData = {
         "Developed responsive web applications using modern JavaScript frameworks and led UI/UX initiatives.",
     },
     {
+      id: uuidv4(),
       position: "Lead Frontend Engineer",
       employer: "CloudScale Systems",
       startDate: "2018-01-01",

@@ -3,12 +3,11 @@ import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
 export default function EducationPanel({ education }) {
-  // TODO not use index as key
   return (
     <ExperiencesFrame>
       {education.map((school, index) => (
         <ExperienceFrame
-          key={index}
+          key={school.id}
           title={`${school.qualification}, ${school.institution}`}
         >
           <Input

@@ -3,7 +3,6 @@ import styles from "./RenderedCv.module.css";
 export default function RenderedCv({ className, cvData, cvControl }) {
   console.log(cvControl);
 
-  // TODO not use index as key
   const sortedData = {
     ...cvData,
     experience: cvData.experience.sort(
@@ -57,8 +56,8 @@ export default function RenderedCv({ className, cvData, cvControl }) {
       )}
       <section className={styles.workExperience}>
         <h2 className={styles.sectionHeader}>Work Experience</h2>
-        {sortedData.experience.map((exp, index) => (
-          <section key={index} className={styles.experienceItem}>
+        {sortedData.experience.map((exp) => (
+          <section key={exp.id} className={styles.experienceItem}>
             <div className={styles.experienceItemHeader}>
               <p className={styles.timeAndLocation}>
                 {exp.startDate} - {exp.endDate} {exp.location}
@@ -75,8 +74,8 @@ export default function RenderedCv({ className, cvData, cvControl }) {
       </section>
       <section className={styles.educationalExperience}>
         <h2 className={styles.sectionHeader}>Education and Training</h2>
-        {sortedData.education.map((edu, index) => (
-          <section key={index} className={styles.educationItem}>
+        {sortedData.education.map((edu) => (
+          <section key={edu.id} className={styles.educationItem}>
             <div className={styles.educationItemHeader}>
               <p className={styles.timeAndLocation}>
                 {edu.startDate} - {edu.endDate} {edu.location}
