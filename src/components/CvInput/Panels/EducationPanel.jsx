@@ -1,13 +1,22 @@
+import { useState } from "react";
 import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
 import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
 export default function EducationPanel({ education }) {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  function handleExpand(index) {
+    setExpandedIndex((prev) => (prev === index ? null : index));
+  }
+
   return (
     <ExperiencesFrame>
       {education.map((school, index) => (
         <ExperienceFrame
           key={school.id}
+          expanded={expandedIndex === index}
+          onExpand={() => handleExpand(index)}
           title={`${school.qualification}, ${school.institution}`}
         >
           <Input

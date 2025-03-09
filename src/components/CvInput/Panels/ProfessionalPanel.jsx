@@ -1,12 +1,24 @@
+import { useState } from "react";
 import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
 import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
 export default function ProfessionalPanel({ experience }) {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  function handleExpand(index) {
+    setExpandedIndex((prev) => (prev === index ? null : index));
+  }
+
   return (
     <ExperiencesFrame>
       {experience.map((job, index) => (
-        <ExperienceFrame key={job.id} title={`${job.employer}, ${job.position}`}>
+        <ExperienceFrame
+          key={job.id}
+          expanded={expandedIndex === index}
+          onExpand={() => handleExpand(index)}
+          title={`${job.employer}, ${job.position}`}
+        >
           <Input
             type="text"
             id="employer"
