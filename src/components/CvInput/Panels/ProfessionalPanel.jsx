@@ -57,27 +57,23 @@ export default function ProfessionalPanel({ professional, setCvData }) {
         <ExperienceFrame
           key={job.id}
           expanded={expandedIndex === index}
+          exp={job}
+          incompleteWarning="Fill in employer and position!"
           onExpand={() => handleExpand(index)}
-          title={`${job.employer}, ${job.position}`}
-          incompleteWarning={
-            job.employer && job.position
-              ? null
-              : "Fill in employer and position!"
-          }
           handleRemove={() => removeProfessionalItem(index)}
         >
           <Input
             type="text"
-            id="employer"
+            id="organization"
             label="Employer"
-            value={job.employer}
+            value={job.organization}
             onChange={handleChange}
           />
           <Input
             type="text"
-            id="position"
-            label="Position Title"
-            value={job.position}
+            id="title"
+            label="Position"
+            value={job.title}
             onChange={handleChange}
           />
           <Input

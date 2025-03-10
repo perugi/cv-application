@@ -1,5 +1,40 @@
 import styles from "./RenderedCv.module.css";
 
+function formatDate(dateString) {
+  if (dateString === "Present") return dateString;
+  const date = new Date(dateString);
+  return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+}
+
+function renderExperienceItem(exp) {
+  console.log(exp)
+  return (
+    <>
+      {exp.organization && exp.title && (
+        <section key={exp.id} className={styles.experienceItem}>
+          <div className={styles.experienceItemHeader}>
+            <p className={styles.timeAndLocation}>
+              {exp.startDate && exp.endDate && (
+                <>
+                  {formatDate(exp.startDate)} - {formatDate(exp.endDate)}
+                  {exp.location && " • "}
+                </>
+              )}
+              {exp.location}
+            </p>
+            <h3>
+              <span className={styles.position}>{exp.title}</span>
+              {" • "}
+              <span className={styles.employer}>{exp.organization}</span>
+            </h3>
+          </div>
+          {exp.description && <p>{exp.description}</p>}
+        </section>
+      )}
+    </>
+  );
+}
+
 export default function RenderedCv({ className, cvData, cvControl }) {
   // TODO implement effect of cvControl on rendered CV.
   console.log(cvControl);
@@ -57,39 +92,11 @@ export default function RenderedCv({ className, cvData, cvControl }) {
       )}
       <section className={styles.workExperience}>
         <h2 className={styles.sectionHeader}>Work Experience</h2>
-        {sortedData.professional.map((exp) => (
-          <section key={exp.id} className={styles.experienceItem}>
-            <div className={styles.experienceItemHeader}>
-              <p className={styles.timeAndLocation}>
-                {exp.startDate} - {exp.endDate} {exp.location}
-              </p>
-              <h3>
-                <span className={styles.position}>{exp.position}</span>
-                {" at "}
-                <span className={styles.employer}>{exp.employer}</span>
-              </h3>
-            </div>
-            <p>{exp.description}</p>
-          </section>
-        ))}
+        {sortedData.professional.map(renderExperienceItem)}
       </section>
       <section className={styles.educationalExperience}>
         <h2 className={styles.sectionHeader}>Education and Training</h2>
-        {sortedData.education.map((edu) => (
-          <section key={edu.id} className={styles.educationItem}>
-            <div className={styles.educationItemHeader}>
-              <p className={styles.timeAndLocation}>
-                {edu.startDate} - {edu.endDate} {edu.location}
-              </p>
-              <h3>
-                <span className={styles.title}>{edu.title}</span>
-                {", "}
-                <span className={styles.institution}>{edu.institution}</span>
-              </h3>
-            </div>
-            <p>{edu.description}</p>
-          </section>
-        ))}
+        {sortedData.education.map(renderExperienceItem)}
       </section>
     </div>
   );

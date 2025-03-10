@@ -13,7 +13,7 @@ const exampleCvData = {
     {
       id: uuidv4(),
       title: "Bachelor of Science in Software Engineering",
-      institution: "Oregon State University",
+      organization: "Oregon State University",
       startDate: "2008-09-01",
       endDate: "2012-05-30",
       location: "Corvallis, Oregon",
@@ -23,7 +23,7 @@ const exampleCvData = {
     {
       id: uuidv4(),
       title: "Master of Science in Information Systems",
-      institution: "University of Washington",
+      organization: "University of Washington",
       startDate: "2012-09-01",
       endDate: "2014-06-30",
       location: "Seattle, Washington",
@@ -34,8 +34,8 @@ const exampleCvData = {
   professional: [
     {
       id: uuidv4(),
-      position: "Frontend Developer",
-      employer: "TechStart Solutions",
+      title: "Frontend Developer",
+      organization: "TechStart Solutions",
       startDate: "2014-07-01",
       endDate: "2017-12-31",
       location: "Seattle, Washington",
@@ -44,8 +44,8 @@ const exampleCvData = {
     },
     {
       id: uuidv4(),
-      position: "Lead Frontend Engineer",
-      employer: "CloudScale Systems",
+      title: "Lead Frontend Engineer",
+      organization: "CloudScale Systems",
       startDate: "2018-01-01",
       endDate: "Present",
       location: "Portland, Oregon",

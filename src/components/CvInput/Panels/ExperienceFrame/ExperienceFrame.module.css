@@ -8,6 +8,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.title {
+  white-space: pre-line;
+}
+
 .panelInfo {
   display: flex;
   justify-content: space-between;
@@ -24,4 +28,10 @@
 
 .incomplete {
   color: red;
+}
+
+.organization {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
 }

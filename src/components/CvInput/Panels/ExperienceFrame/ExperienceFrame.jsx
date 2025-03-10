@@ -1,11 +1,11 @@
 import styles from "./ExperienceFrame.module.css";
 
 export default function ExperienceFrame({
-  title,
   expanded,
   onExpand,
   children,
   handleRemove,
+  exp,
   incompleteWarning,
 }) {
   return (
@@ -14,15 +14,22 @@ export default function ExperienceFrame({
         {!expanded && (
           <h2
             className={`${styles.title} ${
-              incompleteWarning && styles.incomplete
+              exp.organization && exp.title ? "" : styles.incomplete
             }`}
           >
-            {incompleteWarning ? incompleteWarning : title}
+            {exp.organization && exp.title ? (
+              <>
+                {exp.title}
+                <span className={styles.organization}>{exp.organization}</span>
+              </>
+            ) : (
+              incompleteWarning
+            )}
           </h2>
         )}
         <button
           className={styles.expand}
-          aria-label={`Toggle ${title} section visibility`}
+          aria-label={`Toggle ${exp.title} section visibility`}
           onClick={onExpand}
         >
           {expanded ? "▲" : "▼"}
