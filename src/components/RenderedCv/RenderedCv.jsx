@@ -1,4 +1,5 @@
 import styles from "./RenderedCv.module.css";
+import { Fragment } from "react";
 
 function formatDate(dateString) {
   if (dateString === "Present") return dateString;
@@ -7,11 +8,10 @@ function formatDate(dateString) {
 }
 
 function renderExperienceItem(exp) {
-  console.log(exp);
   return (
-    <>
+    <Fragment key={exp.id}>
       {exp.organization && exp.title && (
-        <section key={exp.id} className={styles.experienceItem}>
+        <section className={styles.experienceItem}>
           <div className={styles.experienceItemHeader}>
             <p className={styles.timeAndLocation}>
               {exp.startDate && exp.endDate && (
@@ -31,7 +31,7 @@ function renderExperienceItem(exp) {
           {exp.description && <p>{exp.description}</p>}
         </section>
       )}
-    </>
+    </Fragment>
   );
 }
 
@@ -98,12 +98,20 @@ export default function RenderedCv({ className, cvData, cvControl }) {
         </section>
       )}
       <section className={styles.workExperience}>
-        <h2 className={styles.sectionHeader}>Work Experience</h2>
-        {sortedData.professional.map(renderExperienceItem)}
+        {sortedData.professional.length > 0 && (
+          <>
+            <h2 className={styles.sectionHeader}>Work Experience</h2>
+            {sortedData.professional.map(renderExperienceItem)}
+          </>
+        )}
       </section>
       <section className={styles.educationalExperience}>
-        <h2 className={styles.sectionHeader}>Education and Training</h2>
-        {sortedData.education.map(renderExperienceItem)}
+        {sortedData.education.length > 0 && (
+          <>
+            <h2 className={styles.sectionHeader}>Education and Training</h2>
+            {sortedData.education.map(renderExperienceItem)}
+          </>
+        )}
       </section>
     </div>
   );

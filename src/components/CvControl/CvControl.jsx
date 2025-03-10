@@ -1,7 +1,13 @@
 import PanelFrame from "../CvInput/Panels/PanelFrame/PanelFrame";
 import styles from "./CvControl.module.css";
+import { sampleCvData } from "../../data";
 
-export default function CvControl({ className, cvControl, setCvControl }) {
+export default function CvControl({
+  className,
+  cvControl,
+  setCvControl,
+  setCvData,
+}) {
   const handleButtonClick = (type, value) => {
     setCvControl((prev) => ({
       ...prev,
@@ -9,9 +15,37 @@ export default function CvControl({ className, cvControl, setCvControl }) {
     }));
   };
 
+  const clearData = () => {
+    setCvData({
+      personalInfo: {
+        fullName: "",
+        dob: "",
+        email: "",
+        phone: "",
+        address: "",
+        bio: "",
+      },
+      education: [],
+      professional: [],
+    });
+  };
+
+  const loadSample = () => {
+    setCvData(sampleCvData);
+  };
+
   return (
     <div className={`${className} ${styles.cvControl}`}>
       <PanelFrame title="CV Setup">
+        <div>
+          <p>CV Data:</p>
+          <button aria-label="Clear CV data" onClick={clearData}>
+            Clear
+          </button>
+          <button aria-label="Load sample CV data" onClick={loadSample}>
+            Load sample
+          </button>
+        </div>
         <div>
           <p>Layout:</p>
           <button

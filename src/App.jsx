@@ -6,34 +6,37 @@ import CvInput from "./components/CvInput/CvInput";
 import CvControl from "./components/CvControl/CvControl";
 import RenderedCv from "./components/RenderedCv/RenderedCv";
 import styles from "./App.module.css";
-import { exampleCvData, defaultCvControl } from "./data";
+import { sampleCvData, defaultCvControl } from "./data";
 
 function App() {
-  const [cvData, setCvData] = useState(exampleCvData);
+  const [cvData, setCvData] = useState(sampleCvData);
   const [cvControl, setCvControl] = useState(defaultCvControl);
+
+  console.log(cvData);
 
   return (
     <div className={styles.app}>
       <Header className={styles.header} />
       <main className={styles.main}>
         <div className={styles.cvContainer}>
-          <CvInput
-            className={styles.CvInput}
-            cvData={cvData}
-            setCvData={setCvData}
-          />
           <div>
             <CvControl
               className={styles.cvControl}
               cvControl={cvControl}
               setCvControl={setCvControl}
+              setCvData={setCvData}
             />
-            <RenderedCv
-              className={styles.renderedCv}
+            <CvInput
+              className={styles.CvInput}
               cvData={cvData}
-              cvControl={cvControl}
+              setCvData={setCvData}
             />
           </div>
+          <RenderedCv
+            className={styles.renderedCv}
+            cvData={cvData}
+            cvControl={cvControl}
+          />
         </div>
       </main>
       <Footer className={styles.footer} />

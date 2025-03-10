@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-const exampleCvData = {
+const sampleCvData = {
   personalInfo: {
     fullName: "Sarah Anderson",
     dob: "1990-03-15",
@@ -62,4 +62,4 @@ const defaultCvControl = {
   fontSize: "medium",
 };
 
-export { exampleCvData, defaultCvControl };
+export { sampleCvData, defaultCvControl };
