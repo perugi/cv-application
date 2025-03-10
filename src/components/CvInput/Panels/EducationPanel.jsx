@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";	
+
 import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
 import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
@@ -20,7 +22,7 @@ export default function EducationPanel({ education, setCvData }) {
     }));
   }
 
-  function handleRemove(removedIndex) {
+  function removeEducationItem(removedIndex) {
     setCvData((prev) => ({
       ...prev,
       education: prev.education.filter(
@@ -29,15 +31,40 @@ export default function EducationPanel({ education, setCvData }) {
     }));
   }
 
+  function addEducationItem() {
+    setCvData((prev) => ({
+      ...prev,
+      education: [
+        ...prev.education,
+        {
+          id: uuidv4(),
+          institution: "",
+          title: "",
+          startDate: "",
+          endDate: "",
+          location: "",
+          description: "",
+        }
+      ]
+    }))
+
+    setExpandedIndex(education.length);
+  }
+
   return (
-    <ExperiencesFrame>
+    <ExperiencesFrame handleAdd={addEducationItem}>
       {education.map((school, index) => (
         <ExperienceFrame
           key={school.id}
           expanded={expandedIndex === index}
           onExpand={() => handleExpand(index)}
           title={`${school.title}, ${school.institution}`}
-          handleRemove={() => handleRemove(index)}
+          incompleteWarning={
+            school.institution && school.title
+              ? null
+              : "Fill in institution and title!"
+          }
+          handleRemove={() => removeEducationItem(index)}
         >
           <Input
             type="text"

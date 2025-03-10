@@ -6,11 +6,20 @@ export default function ExperienceFrame({
   onExpand,
   children,
   handleRemove,
+  incompleteWarning,
 }) {
   return (
     <div className={styles.frame}>
       <div className={styles.panelInfo}>
-        {!expanded && <h2 className={styles.title}>{title}</h2>}
+        {!expanded && (
+          <h2
+            className={`${styles.title} ${
+              incompleteWarning && styles.incomplete
+            }`}
+          >
+            {incompleteWarning ? incompleteWarning : title}
+          </h2>
+        )}
         <button
           className={styles.expand}
           aria-label={`Toggle ${title} section visibility`}

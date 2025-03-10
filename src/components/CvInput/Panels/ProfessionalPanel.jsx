@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
 import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
-export default function ProfessionalPanel({ experience, setCvData }) {
+export default function ProfessionalPanel({ professional, setCvData }) {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   function handleExpand(index) {
@@ -14,28 +16,55 @@ export default function ProfessionalPanel({ experience, setCvData }) {
     const { id, value } = event.target;
     setCvData((prev) => ({
       ...prev,
-      experience: prev.experience.map((job, index) =>
+      professional: prev.professional.map((job, index) =>
         index === expandedIndex ? { ...job, [id]: value } : job
       ),
     }));
   }
 
-  function handleRemove(removedIndex) {
+  function removeProfessionalItem(removedIndex) {
     setCvData((prev) => ({
       ...prev,
-      experience: prev.experience.filter((job, index) => index !== removedIndex),
+      professional: prev.professional.filter(
+        (_, index) => index !== removedIndex
+      ),
     }));
   }
 
+  function addProfessionalItem() {
+    setCvData((prev) => ({
+      ...prev,
+      professional: [
+        ...prev.professional,
+        {
+          id: uuidv4(),
+          employer: "",
+          position: "",
+          startDate: "",
+          endDate: "",
+          location: "",
+          description: "",
+        },
+      ],
+    }));
+
+    setExpandedIndex(professional.length);
+  }
+
   return (
-    <ExperiencesFrame>
-      {experience.map((job, index) => (
+    <ExperiencesFrame handleAdd={addProfessionalItem}>
+      {professional.map((job, index) => (
         <ExperienceFrame
           key={job.id}
           expanded={expandedIndex === index}
           onExpand={() => handleExpand(index)}
           title={`${job.employer}, ${job.position}`}
-          handkeRemove={() => handleRemove(index)}
+          incompleteWarning={
+            job.employer && job.position
+              ? null
+              : "Fill in employer and position!"
+          }
+          handleRemove={() => removeProfessionalItem(index)}
         >
           <Input
             type="text"

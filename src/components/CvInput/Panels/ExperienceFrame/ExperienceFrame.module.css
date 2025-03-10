@@ -21,3 +21,7 @@
 .removeExperience {
   align-self: end;
 }
+
+.incomplete {
+  color: red;
+}

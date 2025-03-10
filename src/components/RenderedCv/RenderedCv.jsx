@@ -1,11 +1,12 @@
 import styles from "./RenderedCv.module.css";
 
 export default function RenderedCv({ className, cvData, cvControl }) {
+  // TODO implement effect of cvControl on rendered CV.
   console.log(cvControl);
 
   const sortedData = {
     ...cvData,
-    experience: cvData.experience.toSorted(
+    professional: cvData.professional.toSorted(
       (a, b) => new Date(b.startDate) - new Date(a.startDate)
     ),
     education: cvData.education.toSorted(
@@ -56,7 +57,7 @@ export default function RenderedCv({ className, cvData, cvControl }) {
       )}
       <section className={styles.workExperience}>
         <h2 className={styles.sectionHeader}>Work Experience</h2>
-        {sortedData.experience.map((exp) => (
+        {sortedData.professional.map((exp) => (
           <section key={exp.id} className={styles.experienceItem}>
             <div className={styles.experienceItemHeader}>
               <p className={styles.timeAndLocation}>
@@ -81,9 +82,7 @@ export default function RenderedCv({ className, cvData, cvControl }) {
                 {edu.startDate} - {edu.endDate} {edu.location}
               </p>
               <h3>
-                <span className={styles.title}>
-                  {edu.title}
-                </span>
+                <span className={styles.title}>{edu.title}</span>
                 {", "}
                 <span className={styles.institution}>{edu.institution}</span>
               </h3>

@@ -31,7 +31,7 @@ const exampleCvData = {
         "Focused on cloud computing architectures and distributed systems.",
     },
   ],
-  experience: [
+  professional: [
     {
       id: uuidv4(),
       position: "Frontend Developer",
