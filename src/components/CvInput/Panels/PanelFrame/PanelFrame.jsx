@@ -1,8 +1,13 @@
 import { useState } from "react";
 import styles from "./PanelFrame.module.css";
 
-export default function PanelFrame({ title, children, expandable = true }) {
-  const [expanded, setExpanded] = useState(false);
+export default function PanelFrame({
+  title,
+  children,
+  expandable = true,
+  initiallyExpanded = false,
+}) {
+  const [expanded, setExpanded] = useState(initiallyExpanded);
 
   function handleExpand() {
     setExpanded((prev) => !prev);

@@ -8,7 +8,7 @@ import styles from "./CvInput.module.css";
 export default function CvInput({ className, cvData, setCvData }) {
   return (
     <div className={`${className} ${styles.cvInput}`}>
-      <PanelFrame title="Personal Information">
+      <PanelFrame title="Personal Information" initiallyExpanded={true}>
         <PersonalInfoPanel
           personalInfo={cvData.personalInfo}
           setCvData={setCvData}
