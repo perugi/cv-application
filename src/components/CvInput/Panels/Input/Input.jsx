@@ -5,7 +5,13 @@ export default function Input({ type = "text", id, label, value, onChange }) {
   return (
     <div className={styles.inputContainer}>
       {type === "textarea" ? (
-        <textarea id={id} placeholder=" " value={value} onChange={onChange} />
+        <textarea
+          id={id}
+          placeholder=" "
+          value={value}
+          onChange={onChange}
+          rows={5}
+        />
       ) : (
         <input
           type={type}

@@ -12,7 +12,6 @@ export default function PersonalInfoPanel({ personalInfo, setCvData }) {
     }));
   }
 
-  // TODO add social media account links
   return (
     <>
       <Input

@@ -1,0 +1,14 @@
+.endDateContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input[type="date"] {
+  width: auto;
+}
+
+.present {
+  position: relative;
+  top: 12px;
+}

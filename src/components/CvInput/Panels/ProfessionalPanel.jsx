@@ -5,6 +5,8 @@ import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
 import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
+import styles from "./ProfessionalPanel.module.css";
+
 export default function ProfessionalPanel({ professional, setCvData }) {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
@@ -83,13 +85,19 @@ export default function ProfessionalPanel({ professional, setCvData }) {
             value={job.startDate}
             onChange={handleChange}
           />
-          <Input
-            type="date"
-            id="endDate"
-            label="End Date"
-            value={job.endDate}
-            onChange={handleChange}
-          />
+          <div className={styles.endDateContainer}>
+            <Input
+              type="date"
+              id="endDate"
+              label="End Date"
+              value={job.endDate}
+              onChange={handleChange}
+            />
+            <label htmlFor="present" className={styles.present}>
+              Present
+            </label>
+            <input type="checkbox" id="present" className={styles.present} />
+          </div>
           <Input
             type="text"
             id="location"

@@ -16,12 +16,11 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Header className={styles.header} />
       <main className={styles.main}>
         <div className={styles.cvContainer}>
-          <div>
+          <div className={styles.cvBuilder}>
+            <Header className={styles.header} />
             <CvControl
-              className={styles.cvControl}
               cvControl={cvControl}
               setCvControl={setCvControl}
               setCvData={setCvData}

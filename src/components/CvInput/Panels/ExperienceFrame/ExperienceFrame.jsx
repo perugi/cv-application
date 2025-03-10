@@ -36,7 +36,10 @@ export default function ExperienceFrame({
         </button>
       </div>
       {expanded && children}
-      <button className={styles.removeExperience} onClick={handleRemove}>
+      <button
+        className={`${styles.removeExperience} ${expanded && styles.displayed}`}
+        onClick={handleRemove}
+      >
         -
       </button>
     </div>

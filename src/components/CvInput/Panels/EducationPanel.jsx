@@ -5,6 +5,8 @@ import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
 import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
+import styles from "./EducationPanel.module.css";
+
 export default function EducationPanel({ education, setCvData }) {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
@@ -81,13 +83,19 @@ export default function EducationPanel({ education, setCvData }) {
             value={school.startDate}
             onChange={handleChange}
           />
-          <Input
-            type="date"
-            id="endDate"
-            label="End Date"
-            value={school.endDate}
-            onChange={handleChange}
-          />
+          <div className={styles.endDateContainer}>
+            <Input
+              type="date"
+              id="endDate"
+              label="End Date"
+              value={school.endDate}
+              onChange={handleChange}
+            />
+            <label htmlFor="present" className={styles.present}>
+              Present
+            </label>
+            <input type="checkbox" id="present" className={styles.present} />
+          </div>
           <Input
             type="text"
             id="location"

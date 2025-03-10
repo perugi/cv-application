@@ -13,11 +13,6 @@ export default function PanelFrame({
     setExpanded((prev) => !prev);
   }
 
-  /* 
-  TODO maybe remove the expand button for the education and training panel
-  we can control expansion by expanding the individual items 
-  (only one expanded at a time, maybe). 
-  */
   return (
     <div className={styles.frame}>
       <div className={styles.panelInfo}>
@@ -32,7 +27,11 @@ export default function PanelFrame({
           </button>
         )}
       </div>
-      {expandable ? expanded && children : children}
+      {expandable ? (
+        expanded && <div className={styles.content}>{children}</div>
+      ) : (
+        <div className={styles.content}>{children}</div>
+      )}
     </div>
   );
 }

@@ -9,7 +9,7 @@
 }
 
 .title {
-  white-space: pre-line;
+  min-height: 45px;
 }
 
 .panelInfo {
@@ -23,11 +23,18 @@
 }
 
 .removeExperience {
+  display: none;
+  margin-top: 5px;
   align-self: end;
 }
 
+.removeExperience.displayed {
+  display: block;
+}
+
 .incomplete {
-  color: red;
+  color: rgb(221, 0, 0);
+  font-weight: 600;
 }
 
 .organization {
