@@ -5,10 +5,10 @@ export default function RenderedCv({ className, cvData, cvControl }) {
 
   const sortedData = {
     ...cvData,
-    experience: cvData.experience.sort(
+    experience: cvData.experience.toSorted(
       (a, b) => new Date(b.startDate) - new Date(a.startDate)
     ),
-    education: cvData.education.sort(
+    education: cvData.education.toSorted(
       (a, b) => new Date(b.startDate) - new Date(a.startDate)
     ),
   };
@@ -81,8 +81,8 @@ export default function RenderedCv({ className, cvData, cvControl }) {
                 {edu.startDate} - {edu.endDate} {edu.location}
               </p>
               <h3>
-                <span className={styles.qualification}>
-                  {edu.qualification}
+                <span className={styles.title}>
+                  {edu.title}
                 </span>
                 {", "}
                 <span className={styles.institution}>{edu.institution}</span>

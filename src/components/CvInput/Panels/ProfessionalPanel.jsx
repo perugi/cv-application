@@ -20,6 +20,13 @@ export default function ProfessionalPanel({ experience, setCvData }) {
     }));
   }
 
+  function handleRemove(removedIndex) {
+    setCvData((prev) => ({
+      ...prev,
+      experience: prev.experience.filter((job, index) => index !== removedIndex),
+    }));
+  }
+
   return (
     <ExperiencesFrame>
       {experience.map((job, index) => (
@@ -28,6 +35,7 @@ export default function ProfessionalPanel({ experience, setCvData }) {
           expanded={expandedIndex === index}
           onExpand={() => handleExpand(index)}
           title={`${job.employer}, ${job.position}`}
+          handkeRemove={() => handleRemove(index)}
         >
           <Input
             type="text"

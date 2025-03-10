@@ -12,7 +12,7 @@ const exampleCvData = {
   education: [
     {
       id: uuidv4(),
-      qualification: "Bachelor of Science in Software Engineering",
+      title: "Bachelor of Science in Software Engineering",
       institution: "Oregon State University",
       startDate: "2008-09-01",
       endDate: "2012-05-30",
@@ -22,7 +22,7 @@ const exampleCvData = {
     },
     {
       id: uuidv4(),
-      qualification: "Master of Science in Information Systems",
+      title: "Master of Science in Information Systems",
       institution: "University of Washington",
       startDate: "2012-09-01",
       endDate: "2014-06-30",

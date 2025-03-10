@@ -5,6 +5,7 @@ export default function ExperienceFrame({
   expanded,
   onExpand,
   children,
+  handleRemove,
 }) {
   return (
     <div className={styles.frame}>
@@ -19,7 +20,9 @@ export default function ExperienceFrame({
         </button>
       </div>
       {expanded && children}
-      <button className={styles.removeExperience}>-</button>
+      <button className={styles.removeExperience} onClick={handleRemove}>
+        -
+      </button>
     </div>
   );
 }

@@ -32,11 +32,11 @@
 }
 
 .position,
-.qualification {
+.title {
   text-transform: uppercase;
 }
 
 .position,
-.qualification {
+.title {
   font-weight: 600;
 }

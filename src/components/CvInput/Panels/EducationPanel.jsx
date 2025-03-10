@@ -20,6 +20,15 @@ export default function EducationPanel({ education, setCvData }) {
     }));
   }
 
+  function handleRemove(removedIndex) {
+    setCvData((prev) => ({
+      ...prev,
+      education: prev.education.filter(
+        (school, index) => index !== removedIndex
+      ),
+    }));
+  }
+
   return (
     <ExperiencesFrame>
       {education.map((school, index) => (
@@ -27,7 +36,8 @@ export default function EducationPanel({ education, setCvData }) {
           key={school.id}
           expanded={expandedIndex === index}
           onExpand={() => handleExpand(index)}
-          title={`${school.qualification}, ${school.institution}`}
+          title={`${school.title}, ${school.institution}`}
+          handleRemove={() => handleRemove(index)}
         >
           <Input
             type="text"
@@ -38,9 +48,9 @@ export default function EducationPanel({ education, setCvData }) {
           />
           <Input
             type="text"
-            id="qualification"
-            label="Title of Qualification Achieved"
-            value={school.qualification}
+            id="title"
+            label="Title"
+            value={school.title}
             onChange={handleChange}
           />
           <Input
