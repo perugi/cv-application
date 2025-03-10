@@ -7,7 +7,7 @@ function formatDate(dateString) {
 }
 
 function renderExperienceItem(exp) {
-  console.log(exp)
+  console.log(exp);
   return (
     <>
       {exp.organization && exp.title && (
@@ -37,15 +37,22 @@ function renderExperienceItem(exp) {
 
 export default function RenderedCv({ className, cvData, cvControl }) {
   // TODO implement effect of cvControl on rendered CV.
-  console.log(cvControl);
+
+  function sortExperience(a, b, sorting) {
+    if (sorting === "newestFirst") {
+      return new Date(b.startDate) - new Date(a.startDate);
+    }
+
+    return new Date(a.startDate) - new Date(b.startDate);
+  }
 
   const sortedData = {
     ...cvData,
-    professional: cvData.professional.toSorted(
-      (a, b) => new Date(b.startDate) - new Date(a.startDate)
+    professional: cvData.professional.toSorted((a, b) =>
+      sortExperience(a, b, cvControl.sorting)
     ),
-    education: cvData.education.toSorted(
-      (a, b) => new Date(b.startDate) - new Date(a.startDate)
+    education: cvData.education.toSorted((a, b) =>
+      sortExperience(a, b, cvControl.sorting)
     ),
   };
 
