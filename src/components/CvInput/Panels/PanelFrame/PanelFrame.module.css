@@ -20,8 +20,35 @@
   align-items: center;
 }
 
+.expand {
+  margin-left: auto;
+  flex-shrink: 0;
+  transition: transform 0.2s ease-in-out;
+
+  &.expanded {
+    transform: rotate(180deg);
+    background-color: var(--color-highlight);
+  }
+}
+
 .content {
   margin-top: 10px;
+  transform-origin: top center;
+
+  &.expanded {
+    animation: expand 0.2s ease-in-out forwards;
+  }
+}
+
+@keyframes expand {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
 }
 
 button {

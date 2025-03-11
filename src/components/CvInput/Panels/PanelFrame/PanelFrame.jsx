@@ -19,18 +19,24 @@ export default function PanelFrame({
         <h1 className={styles.title}>{title}</h1>
         {expandable && (
           <button
-            className={styles.expand}
+            className={`${styles.expand} ${expanded && styles.expanded}`}
             aria-label={`Toggle ${title} section visibility`}
             onClick={handleExpand}
           >
-            {expanded ? "▲" : "▼"}
+            ▼
           </button>
         )}
       </div>
       {expandable ? (
-        expanded && <div className={styles.content}>{children}</div>
+        expanded && (
+          <div
+            className={`${styles.content} ${expanded ? styles.expanded : ""}`}
+          >
+            {children}
+          </div>
+        )
       ) : (
-        <div className={styles.content}>{children}</div>
+        <div className={`${styles.content} ${styles.expanded}`}>{children}</div>
       )}
     </div>
   );

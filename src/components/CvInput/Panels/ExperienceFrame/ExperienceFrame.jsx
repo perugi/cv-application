@@ -28,14 +28,16 @@ export default function ExperienceFrame({
           </h2>
         )}
         <button
-          className={styles.expand}
+          className={`${styles.expand} ${expanded && styles.expanded}`}
           aria-label={`Toggle ${exp.title} section visibility`}
           onClick={onExpand}
         >
-          {expanded ? "▲" : "▼"}
+          ▼
         </button>
       </div>
-      {expanded && children}
+      <div className={`${styles.content} ${expanded ? styles.expanded : ""}`}>
+        {expanded && children}
+      </div>
       <button
         className={`${styles.removeExperience} ${expanded && styles.displayed}`}
         onClick={handleRemove}

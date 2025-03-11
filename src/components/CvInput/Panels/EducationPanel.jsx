@@ -40,6 +40,8 @@ export default function EducationPanel({ education, setCvData }) {
       ...prev,
       education: prev.education.filter((_, index) => index !== removedIndex),
     }));
+
+    setExpandedIndex(null);
   }
 
   function addEducationItem() {
