@@ -16,7 +16,8 @@ function renderExperienceItem(exp) {
             <p className={styles.timeAndLocation}>
               {exp.startDate && exp.endDate && (
                 <>
-                  {formatDate(exp.startDate)} - {formatDate(exp.endDate)}
+                  {formatDate(exp.startDate)} -{" "}
+                  {exp.endDateIsPresent ? "Present" : formatDate(exp.endDate)}
                   {exp.location && " • "}
                 </>
               )}

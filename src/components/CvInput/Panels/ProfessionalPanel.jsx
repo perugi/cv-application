@@ -5,8 +5,6 @@ import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
 import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
-import styles from "./ProfessionalPanel.module.css";
-
 export default function ProfessionalPanel({ professional, setCvData }) {
   const [expandedIndex, setExpandedIndex] = useState(null);
 
@@ -20,6 +18,17 @@ export default function ProfessionalPanel({ professional, setCvData }) {
       ...prev,
       professional: prev.professional.map((job, index) =>
         index === expandedIndex ? { ...job, [id]: value } : job
+      ),
+    }));
+  }
+
+  function togglePresent(event) {
+    const { checked } = event.target;
+
+    setCvData((prev) => ({
+      ...prev,
+      professional: prev.professional.map((job, index) =>
+        index === expandedIndex ? { ...job, endDateIsPresent: checked } : job
       ),
     }));
   }
@@ -85,19 +94,15 @@ export default function ProfessionalPanel({ professional, setCvData }) {
             value={job.startDate}
             onChange={handleChange}
           />
-          <div className={styles.endDateContainer}>
-            <Input
-              type="date"
-              id="endDate"
-              label="End Date"
-              value={job.endDate}
-              onChange={handleChange}
-            />
-            <label htmlFor="present" className={styles.present}>
-              Present
-            </label>
-            <input type="checkbox" id="present" className={styles.present} />
-          </div>
+          <Input
+            type="date"
+            id="endDate"
+            label="End Date"
+            value={job.endDate}
+            onChange={handleChange}
+            togglePresent={togglePresent}
+            endDateIsPresent={job.endDateIsPresent}
+          />
           <Input
             type="text"
             id="location"

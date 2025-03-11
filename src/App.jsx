@@ -12,8 +12,6 @@ function App() {
   const [cvData, setCvData] = useState(sampleCvData);
   const [cvControl, setCvControl] = useState(defaultCvControl);
 
-  console.log(cvData);
-
   return (
     <div className={styles.app}>
       <main className={styles.main}>

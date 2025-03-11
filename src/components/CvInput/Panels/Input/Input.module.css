@@ -11,7 +11,7 @@
   border-radius: 4px;
 }
 
-.inputContainer label {
+.inputContainer .inputLabel {
   position: absolute;
   top: 50%;
   left: 1rem;
@@ -22,14 +22,14 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.inputContainer:has(textarea) label {
+.inputContainer:has(textarea) .inputLabel {
   top: 1rem;
 }
 
-.inputContainer input:focus + label,
-.inputContainer input:not(:placeholder-shown) + label,
-.inputContainer textarea:focus + label,
-.inputContainer textarea:not(:placeholder-shown) + label {
+.inputContainer input:focus + .inputLabel,
+.inputContainer input:not(:placeholder-shown) + .inputLabel,
+.inputContainer textarea:focus + .inputLabel,
+.inputContainer textarea:not(:placeholder-shown) + .inputLabel {
   top: 0;
   transform: translateY(-100%);
   font-size: 0.8rem;
@@ -38,4 +38,24 @@
 
 .inputContainer > textarea {
   resize: vertical;
+}
+
+.endDateContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+
+  input[type="date"] {
+    margin-right: 10px;
+  }
+
+  input.endDateIsPresent {
+    width: auto;
+    accent-color: var(--color-highlight);
+  }
+}
+
+input[type="date"] {
+  width: auto;
 }

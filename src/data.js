@@ -16,6 +16,7 @@ const sampleCvData = {
       organization: "Oregon State University",
       startDate: "2008-09-01",
       endDate: "2012-05-30",
+      endDateIsPresent: false,
       location: "Corvallis, Oregon",
       description:
         "Core focus on software architecture, algorithms, and web technologies.",
@@ -26,6 +27,7 @@ const sampleCvData = {
       organization: "University of Washington",
       startDate: "2012-09-01",
       endDate: "2014-06-30",
+      endDateIsPresent: false,
       location: "Seattle, Washington",
       description:
         "Focused on cloud computing architectures and distributed systems.",
@@ -38,6 +40,7 @@ const sampleCvData = {
       organization: "TechStart Solutions",
       startDate: "2014-07-01",
       endDate: "2017-12-31",
+      endDateIsPresent: false,
       location: "Seattle, Washington",
       description:
         "Developed responsive web applications using modern JavaScript frameworks and led UI/UX initiatives.",
@@ -47,7 +50,8 @@ const sampleCvData = {
       title: "Lead Frontend Engineer",
       organization: "CloudScale Systems",
       startDate: "2018-01-01",
-      endDate: "Present",
+      endDate: "2021-12-31",
+      endDateIsPresent: true,
       location: "Portland, Oregon",
       description:
         "Managing a team of frontend developers and architecting large-scale web applications using modern tech stack.",
