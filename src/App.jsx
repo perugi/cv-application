@@ -17,7 +17,7 @@ function App() {
       <main className={styles.main}>
         <div className={styles.cvContainer}>
           <div className={styles.cvBuilder}>
-            <Header className={styles.header} />
+            <Header />
             <CvControl
               cvControl={cvControl}
               setCvControl={setCvControl}
