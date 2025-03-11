@@ -11,7 +11,7 @@ function renderExperienceItem(exp) {
   return (
     <Fragment key={exp.id}>
       {exp.organization && exp.title && (
-        <section className={styles.experienceItem}>
+        <div className={styles.experienceItem}>
           <div className={styles.experienceItemHeader}>
             <p className={styles.timeAndLocation}>
               {exp.startDate && exp.endDate && (
@@ -30,7 +30,7 @@ function renderExperienceItem(exp) {
             </h3>
           </div>
           {exp.description && <p>{exp.description}</p>}
-        </section>
+        </div>
       )}
     </Fragment>
   );
@@ -60,6 +60,7 @@ export default function RenderedCv({ cvData, cvControl }) {
   return (
     <div
       className={styles.renderedCv}
+      data-layout={cvControl.layout}
       data-theme={cvControl.colorTheme}
       data-fontsize={cvControl.fontSize}
     >
@@ -127,12 +128,12 @@ export default function RenderedCv({ cvData, cvControl }) {
         </div>
       </section>
       {sortedData.personalInfo.bio && (
-        <section className={styles.aboutMeSection}>
+        <section className={styles.bio}>
           <h2 className={styles.sectionHeader}>About Me</h2>
           <p>{sortedData.personalInfo.bio}</p>
         </section>
       )}
-      <section className={styles.workExperience}>
+      <section className={styles.experience}>
         {sortedData.professional.length > 0 && (
           <>
             <h2 className={styles.sectionHeader}>Work Experience</h2>
@@ -140,7 +141,7 @@ export default function RenderedCv({ cvData, cvControl }) {
           </>
         )}
       </section>
-      <section className={styles.educationalExperience}>
+      <section className={styles.education}>
         {sortedData.education.length > 0 && (
           <>
             <h2 className={styles.sectionHeader}>Education and Training</h2>

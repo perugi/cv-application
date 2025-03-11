@@ -102,10 +102,12 @@ h3 {
 
 section {
   padding: 0 10px;
+  margin: 10px 0;
+}
 
-  &.personalInfo {
-    padding: 10px;
-  }
+section.personalInfo {
+  padding: 10px;
+  margin: 0;
 }
 
 .sectionHeader {
@@ -119,16 +121,19 @@ section {
 }
 
 .sectionHeader,
-.educationItemHeader,
-.experienceItemHeader,
 .fullName {
   border-bottom: 3px solid var(--cv-accent-color);
+}
+
+.educationItemHeader,
+.experienceItemHeader {
+  border-bottom: 2px solid var(--cv-accent-color);
 }
 
 .sectionHeader,
 .educationItemHeader,
 .experienceItemHeader {
-  margin: 1rem 0 0.5rem 0;
+  margin-bottom: 0.5rem;
 }
 
 .position,
@@ -142,17 +147,84 @@ section {
 }
 
 @media (min-width: 600px) {
-  .personalInfo {
-    .label {
-      &.email,
-      &.phone,
-      &.address {
-        display: block;
+  section {
+    padding: 0 20px;
+    margin: 20px 0;
+  }
+
+  section.personalInfo {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .renderedCv {
+    padding-bottom: 0;
+
+    &[data-layout="top"] {
+      .personalInfo {
+        .label {
+          &.email,
+          &.phone,
+          &.address {
+            display: block;
+          }
+        }
+
+        .icon {
+          display: none;
+        }
       }
     }
 
-    .icon {
-      display: none;
+    &[data-layout="left"],
+    &[data-layout="right"] {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        "personalInfo bio"
+        "personalInfo experience"
+        "personalInfo education";
+
+      .personalInfo {
+        grid-area: personalInfo;
+
+        .basicInfo {
+          flex-wrap: nowrap;
+          flex-direction: column;
+
+          .label {
+            &.email,
+            &.phone,
+            &.address {
+              display: none;
+            }
+          }
+
+          .icon {
+            display: block;
+          }
+        }
+      }
+
+      .bio {
+        grid-area: bio;
+      }
+
+      .experience {
+        grid-area: experience;
+      }
+
+      .education {
+        grid-area: education;
+      }
+    }
+
+    &[data-layout="right"] {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "bio personalInfo"
+        "experience personalInfo"
+        "education personalInfo";
     }
   }
 }
