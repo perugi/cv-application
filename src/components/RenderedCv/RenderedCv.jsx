@@ -83,6 +83,7 @@ export default function RenderedCv({ className, cvData, cvControl }) {
             <a
               aria-labelledby="email"
               href={`mailto:${sortedData.personalInfo.email}`}
+              className={styles.emailLink}
             >
               {sortedData.personalInfo.email}
             </a>
@@ -94,11 +95,7 @@ export default function RenderedCv({ className, cvData, cvControl }) {
             <span id="phone" className={`${styles.label} ${styles.phone}`}>
               Phone number:&nbsp;
             </span>
-            <span
-              aria-labelledby="phone"
-            >
-              {sortedData.personalInfo.phone}
-            </span>
+            <span aria-labelledby="phone">{sortedData.personalInfo.phone}</span>
           </p>
         )}
         {sortedData.personalInfo.address && (

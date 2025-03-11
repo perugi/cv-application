@@ -5,20 +5,38 @@
   padding-bottom: 10px;
 
   --cv-header-bg: var(--color-light-gray);
-  --cv-title-color: var(--color-dark-gray);
-  --cv-text-color: black;
+  --cv-header-title-color: var(--color-dark-gray);
+  --cv-header-text-color: black;
+  --cv-main-title-color: var(--color-dark-gray);
   --cv-accent-color: var(--color-mid-gray);
 
   &[data-theme="darkGray"] {
     --cv-header-bg: var(--color-dark-gray);
-    --cv-title-color: white;
-    --cv-text-color: white;
+    --cv-header-title-color: white;
+    --cv-header-text-color: white;
   }
+
+  &[data-theme="lightBlue"] {
+    --cv-header-bg: var(--color-light-blue);
+    --cv-accent-color: var(--color-mid-blue);
+  }
+
+  &[data-theme="darkBlue"] {
+    --cv-header-bg: var(--color-dark-blue);
+    --cv-header-title-color: white;
+    --cv-header-text-color: white;
+    --cv-accent-color: var(--color-mid-blue);
+  }
+}
+
+h2,
+h3 {
+  color: var(--cv-main-title-color);
 }
 
 .personalInfo {
   background-color: var(--cv-header-bg);
-  color: var(--cv-text-color);
+  color: var(--cv-header-text-color);
 
   p {
     display: flex;
@@ -37,7 +55,6 @@ section {
 .fullName {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--cv-title-color);
 }
 
 .sectionHeader {
@@ -56,8 +73,14 @@ section {
   margin-right: 5px;
 }
 
-[data-theme="darkGray"] .icon {
+[data-theme="darkGray"] .icon,
+[data-theme="darkBlue"] .icon {
   filter: brightness(0) invert(1);
+}
+
+[data-theme="darkGray"] .emailLink,
+[data-theme="darkBlue"] .emailLink {
+  color: white;
 }
 
 .label {
