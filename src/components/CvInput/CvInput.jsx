@@ -5,9 +5,9 @@ import PanelFrame from "./Panels/PanelFrame/PanelFrame.jsx";
 
 import styles from "./CvInput.module.css";
 
-export default function CvInput({ className, cvData, setCvData }) {
+export default function CvInput({ cvData, setCvData }) {
   return (
-    <div className={`${className} ${styles.cvInput}`}>
+    <div className={styles.cvInput}>
       <PanelFrame title="Personal Information" initiallyExpanded={true}>
         <PersonalInfoPanel
           personalInfo={cvData.personalInfo}

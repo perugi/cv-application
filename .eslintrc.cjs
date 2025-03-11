@@ -10,7 +10,7 @@ module.exports = {
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   settings: { react: { version: "18.2" } },
-  plugins: ["react-refresh"],
+  plugins: ["react-refresh", "css-modules"],
   rules: {
     "react/jsx-no-target-blank": "off",
     "react-refresh/only-export-components": [
@@ -18,5 +18,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     "react/prop-types": "off",
+    "css-modules/no-unused-class": "warn",
+    "css-modules/no-undef-class": "error",
   },
 };

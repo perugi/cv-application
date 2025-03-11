@@ -36,7 +36,7 @@ function renderExperienceItem(exp) {
   );
 }
 
-export default function RenderedCv({ className, cvData, cvControl }) {
+export default function RenderedCv({ cvData, cvControl }) {
   // TODO implement effect of cvControl on rendered CV.
 
   function sortExperience(a, b, sorting) {
@@ -58,10 +58,7 @@ export default function RenderedCv({ className, cvData, cvControl }) {
   };
 
   return (
-    <div
-      className={`${styles.renderedCv} ${className}`}
-      data-theme={cvControl.colorTheme}
-    >
+    <div className={styles.renderedCv} data-theme={cvControl.colorTheme}>
       <section className={styles.personalInfo}>
         {sortedData.personalInfo.fullName && (
           <h1 className={styles.fullName}>
