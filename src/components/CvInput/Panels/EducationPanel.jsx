@@ -6,6 +6,9 @@ import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
 export default function EducationPanel({ education, setCvData }) {
+  // TODO add useEffect with ref to give focus to the expanded item (improve keyboard accessibility when adding a new item)
+  // TODO add useEffect to scroll to the expanded item (improve keyboard accessibility when adding a new item)
+
   const [expandedIndex, setExpandedIndex] = useState(null);
 
   function handleExpand(index) {

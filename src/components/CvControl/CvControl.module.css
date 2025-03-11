@@ -8,6 +8,11 @@
 .controlButton.active,
 .fontsizeButton.active {
   background-color: var(--color-highlight);
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-highlight-2);
+  }
 }
 
 .colorButton {
@@ -19,12 +24,19 @@
   position: relative;
 }
 
-.colorButton:hover {
+.colorButton:hover,
+.colorButton:focus-visible {
   border: 2px solid var(--color-highlight-2);
+  outline: none;
 }
 
 .colorButton.active {
   border: 2px solid var(--color-highlight);
+
+  &:hover,
+  &:focus {
+    border: 2px solid var(--color-highlight-2);
+  }
 }
 
 .colorButton.active::after {

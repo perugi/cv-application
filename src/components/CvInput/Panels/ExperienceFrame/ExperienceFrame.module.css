@@ -27,7 +27,8 @@
     transform: rotate(180deg);
     background-color: var(--color-highlight);
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: var(--color-highlight-2);
     }
   }
