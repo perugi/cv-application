@@ -5,16 +5,6 @@
   margin-right: 5px;
 }
 
-.controlButton.active,
-.fontsizeButton.active {
-  background-color: var(--color-highlight);
-
-  &:hover,
-  &:focus {
-    background-color: var(--color-highlight-2);
-  }
-}
-
 .colorButton {
   width: 35px;
   height: 35px;
@@ -22,43 +12,41 @@
   display: inline;
   margin-right: 5px;
   position: relative;
-}
 
-.colorButton:hover,
-.colorButton:focus-visible {
-  border: 2px solid var(--color-highlight-2);
-  outline: none;
-}
+  &.lightGray {
+    background-color: var(--color-light-gray);
+  }
 
-.colorButton.active {
-  border: 2px solid var(--color-highlight);
+  &.darkGray {
+    background-color: var(--color-dark-gray);
+    color: white;
+  }
 
-  &:hover,
-  &:focus {
+  &.darkBlue {
+    background-color: var(--color-dark-blue);
+    color: white;
+  }
+
+  &.lightBlue {
+    background-color: var(--color-light-blue);
+  }
+
+  &:hover {
     border: 2px solid var(--color-highlight-2);
   }
-}
 
-.colorButton.active::after {
-  content: "✓";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 600;
-}
+  &.active {
+    border: 2px solid var(--color-highlight);
+  }
 
-.colorButton.lightGray {
-  background-color: var(--color-light-gray);
-}
-
-.colorButton.darkBlue {
-  background-color: var(--color-dark-blue);
-  color: white;
-}
-
-.colorButton.lightBlue {
-  background-color: var(--color-light-blue);
+  &.active::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+  }
 }
 
 .fontsizeButton {
@@ -67,18 +55,23 @@
   display: inline;
   margin-right: 5px;
   font-weight: 500;
+
+  &.small {
+    font-size: 0.8rem;
+  }
+
+  &.medium {
+    font-size: 1rem;
+  }
+
+  &.large {
+    font-size: 1.2rem;
+  }
 }
 
-.fontsizeButton.small {
-  font-size: 0.8rem;
-}
-
-.fontsizeButton.medium {
-  font-size: 1rem;
-}
-
-.fontsizeButton.large {
-  font-size: 1.2rem;
+.controlButton.active,
+.fontsizeButton.active {
+  background-color: var(--color-highlight);
 }
 
 .settings {
@@ -93,7 +86,7 @@
 }
 
 .buttonGroup {
-  display: inline-flex; /* keep buttons inline */
+  display: inline-flex;
 }
 
 .buttonGroup button {
