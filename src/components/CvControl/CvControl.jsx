@@ -120,6 +120,13 @@ export default function CvControl({
               onClick={() => handleButtonClick("colorTheme", "lightGray")}
             ></button>
             <button
+              className={`${styles.colorButton} ${styles.darkGray} ${
+                cvControl.colorTheme === "darkGray" ? styles.active : ""
+              }`}
+              aria-label="Dark gray color theme"
+              onClick={() => handleButtonClick("colorTheme", "darkGray")}
+            ></button>
+            <button
               className={`${styles.colorButton} ${styles.lightBlue} ${
                 cvControl.colorTheme === "lightBlue" ? styles.active : ""
               }`}

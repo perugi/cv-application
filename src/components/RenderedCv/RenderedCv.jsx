@@ -58,7 +58,10 @@ export default function RenderedCv({ className, cvData, cvControl }) {
   };
 
   return (
-    <div className={`${styles.renderedCv} ${className}`}>
+    <div
+      className={`${styles.renderedCv} ${className}`}
+      data-theme={cvControl.colorTheme}
+    >
       <section className={styles.personalInfo}>
         {sortedData.personalInfo.fullName && (
           <h1 className={styles.fullName}>
@@ -67,28 +70,46 @@ export default function RenderedCv({ className, cvData, cvControl }) {
         )}
         {sortedData.personalInfo.dob && (
           <p>
-            <span className={styles.label}>Date of birth: </span>
+            <span className={styles.label}>Date of birth:&nbsp;</span>
             {sortedData.personalInfo.dob}
           </p>
         )}
         {sortedData.personalInfo.email && (
           <p>
-            <span className={styles.label}>Email address: </span>
-            <a href={`mailto:${sortedData.personalInfo.email}`}>
+            <img src="./src/assets/email.svg" alt="" className={styles.icon} />
+            <span id="email" className={`${styles.label} ${styles.email}`}>
+              Email address:&nbsp;
+            </span>
+            <a
+              aria-labelledby="email"
+              href={`mailto:${sortedData.personalInfo.email}`}
+            >
               {sortedData.personalInfo.email}
             </a>
           </p>
         )}
         {sortedData.personalInfo.phone && (
           <p>
-            <span className={styles.label}>Phone number: </span>
-            {sortedData.personalInfo.phone}
+            <img src="./src/assets/phone.svg" alt="" className={styles.icon} />
+            <span id="phone" className={`${styles.label} ${styles.phone}`}>
+              Phone number:&nbsp;
+            </span>
+            <span
+              aria-labelledby="phone"
+            >
+              {sortedData.personalInfo.phone}
+            </span>
           </p>
         )}
         {sortedData.personalInfo.address && (
           <p>
-            <span className={styles.label}>Address: </span>
-            {sortedData.personalInfo.address}
+            <img src="./src/assets/home.svg" alt="" className={styles.icon} />
+            <span id="address" className={`${styles.label} ${styles.address}`}>
+              Address:&nbsp;
+            </span>
+            <span aria-labelledby="address">
+              {sortedData.personalInfo.address}
+            </span>
           </p>
         )}
       </section>

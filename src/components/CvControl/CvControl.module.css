@@ -5,11 +5,6 @@
   margin-right: 5px;
 }
 
-.controlButton.active,
-.fontsizeButton.active {
-  background-color: var(--color-highlight);
-}
-
 .colorButton {
   width: 35px;
   height: 35px;
@@ -17,36 +12,40 @@
   display: inline;
   margin-right: 5px;
   position: relative;
-}
 
-.colorButton:hover {
-  border: 2px solid var(--color-highlight-2);
-}
+  &.lightGray {
+    background-color: var(--color-light-gray);
+  }
 
-.colorButton.active {
-  border: 2px solid var(--color-highlight);
-}
+  &.darkGray {
+    background-color: var(--color-dark-gray);
+  }
 
-.colorButton.active::after {
-  content: "✓";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 600;
-}
+  &.darkBlue {
+    background-color: var(--color-dark-blue);
+    color: white;
+  }
 
-.colorButton.lightGray {
-  background-color: var(--color-light-gray);
-}
+  &.lightBlue {
+    background-color: var(--color-light-blue);
+  }
 
-.colorButton.darkBlue {
-  background-color: var(--color-dark-blue);
-  color: white;
-}
+  &:hover {
+    border: 2px solid var(--color-highlight-2);
+  }
 
-.colorButton.lightBlue {
-  background-color: var(--color-light-blue);
+  &.active {
+    border: 2px solid var(--color-highlight);
+  }
+
+  &.active::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+  }
 }
 
 .fontsizeButton {
@@ -55,18 +54,23 @@
   display: inline;
   margin-right: 5px;
   font-weight: 500;
+
+  &.small {
+    font-size: 0.8rem;
+  }
+
+  &.medium {
+    font-size: 1rem;
+  }
+
+  &.large {
+    font-size: 1.2rem;
+  }
 }
 
-.fontsizeButton.small {
-  font-size: 0.8rem;
-}
-
-.fontsizeButton.medium {
-  font-size: 1rem;
-}
-
-.fontsizeButton.large {
-  font-size: 1.2rem;
+.controlButton.active,
+.fontsizeButton.active {
+  background-color: var(--color-highlight);
 }
 
 .settings {
@@ -81,7 +85,7 @@
 }
 
 .buttonGroup {
-  display: inline-flex; /* keep buttons inline */
+  display: inline-flex;
 }
 
 .buttonGroup button {
