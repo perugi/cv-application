@@ -25,7 +25,11 @@ function App() {
             />
             <CvInput cvData={cvData} setCvData={setCvData} />
           </div>
-          <RenderedCv cvData={cvData} cvControl={cvControl} />
+          <RenderedCv
+            className={styles.renderedCv}
+            cvData={cvData}
+            cvControl={cvControl}
+          />
         </div>
       </main>
       <Footer className={styles.footer} />

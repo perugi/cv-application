@@ -58,54 +58,73 @@ export default function RenderedCv({ cvData, cvControl }) {
   };
 
   return (
-    <div className={styles.renderedCv} data-theme={cvControl.colorTheme}>
+    <div
+      className={styles.renderedCv}
+      data-theme={cvControl.colorTheme}
+      data-fontsize={cvControl.fontSize}
+    >
       <section className={styles.personalInfo}>
         {sortedData.personalInfo.fullName && (
           <h1 className={styles.fullName}>
             {sortedData.personalInfo.fullName}
           </h1>
         )}
-        {sortedData.personalInfo.dob && (
-          <p>
-            <span className={styles.label}>Date of birth:&nbsp;</span>
-            {sortedData.personalInfo.dob}
-          </p>
-        )}
-        {sortedData.personalInfo.email && (
-          <p>
-            <img src="./src/assets/email.svg" alt="" className={styles.icon} />
-            <span id="email" className={`${styles.label} ${styles.email}`}>
-              Email address:&nbsp;
-            </span>
-            <a
-              aria-labelledby="email"
-              href={`mailto:${sortedData.personalInfo.email}`}
-              className={styles.emailLink}
-            >
-              {sortedData.personalInfo.email}
-            </a>
-          </p>
-        )}
-        {sortedData.personalInfo.phone && (
-          <p>
-            <img src="./src/assets/phone.svg" alt="" className={styles.icon} />
-            <span id="phone" className={`${styles.label} ${styles.phone}`}>
-              Phone number:&nbsp;
-            </span>
-            <span aria-labelledby="phone">{sortedData.personalInfo.phone}</span>
-          </p>
-        )}
-        {sortedData.personalInfo.address && (
-          <p>
-            <img src="./src/assets/home.svg" alt="" className={styles.icon} />
-            <span id="address" className={`${styles.label} ${styles.address}`}>
-              Address:&nbsp;
-            </span>
-            <span aria-labelledby="address">
-              {sortedData.personalInfo.address}
-            </span>
-          </p>
-        )}
+        <div className={styles.basicInfo}>
+          {sortedData.personalInfo.dob && (
+            <p>
+              <span className={styles.label}>Date of birth:&nbsp;</span>
+              {sortedData.personalInfo.dob}
+            </p>
+          )}
+          {sortedData.personalInfo.email && (
+            <p>
+              <img
+                src="./src/assets/email.svg"
+                alt=""
+                className={styles.icon}
+              />
+              <span id="email" className={`${styles.label} ${styles.email}`}>
+                Email address:&nbsp;
+              </span>
+              <a
+                aria-labelledby="email"
+                href={`mailto:${sortedData.personalInfo.email}`}
+                className={styles.emailLink}
+              >
+                {sortedData.personalInfo.email}
+              </a>
+            </p>
+          )}
+          {sortedData.personalInfo.phone && (
+            <p>
+              <img
+                src="./src/assets/phone.svg"
+                alt=""
+                className={styles.icon}
+              />
+              <span id="phone" className={`${styles.label} ${styles.phone}`}>
+                Phone number:&nbsp;
+              </span>
+              <span aria-labelledby="phone">
+                {sortedData.personalInfo.phone}
+              </span>
+            </p>
+          )}
+          {sortedData.personalInfo.address && (
+            <p>
+              <img src="./src/assets/home.svg" alt="" className={styles.icon} />
+              <span
+                id="address"
+                className={`${styles.label} ${styles.address}`}
+              >
+                Address:&nbsp;
+              </span>
+              <span aria-labelledby="address">
+                {sortedData.personalInfo.address}
+              </span>
+            </p>
+          )}
+        </div>
       </section>
       {sortedData.personalInfo.bio && (
         <section className={styles.aboutMeSection}>

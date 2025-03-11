@@ -18,7 +18,7 @@
 
 .cvContainer {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -33,4 +33,15 @@
 
 .footer {
   grid-area: footer;
+}
+
+@media (min-width: 900px) {
+  .cvContainer {
+    flex-direction: row;
+    align-items: start;
+
+    .cvBuilder {
+      flex-basis: 50%;
+    }
+  }
 }

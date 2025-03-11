@@ -4,6 +4,11 @@
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding-bottom: 10px;
+  font-size: var(--rendered-font-medium);
+
+  --rendered-font-small: 0.9rem;
+  --rendered-font-medium: 1rem;
+  --rendered-font-large: 2rem;
 
   --cv-header-bg: var(--color-light-gray);
   --cv-header-title-color: var(--color-dark-gray);
@@ -28,6 +33,18 @@
     --cv-header-text-color: white;
     --cv-accent-color: var(--color-mid-blue);
   }
+
+  &[data-fontsize="small"] {
+    --rendered-font-small: 0.8rem;
+    --rendered-font-medium: 0.9rem;
+    --rendered-font-large: 1.5rem;
+  }
+
+  &[data-fontsize="large"] {
+    --rendered-font-small: 1rem;
+    --rendered-font-medium: 1.2rem;
+    --rendered-font-large: 2.5rem;
+  }
 }
 
 h2,
@@ -39,39 +56,38 @@ h3 {
   background-color: var(--cv-header-bg);
   color: var(--cv-header-text-color);
 
+  .fullName {
+    font-size: var(--rendered-font-large);
+    font-weight: 700;
+  }
+
+  .basicInfo {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+  }
+
   p {
     display: flex;
     align-items: center;
   }
-}
 
-section {
-  padding: 0 10px;
-
-  &.personalInfo {
-    padding: 10px;
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 5px;
   }
-}
 
-.fullName {
-  font-size: 2rem;
-  font-weight: 700;
-}
+  .label {
+    font-weight: 700;
 
-.sectionHeader {
-  text-transform: uppercase;
-  font-weight: 800;
-}
-
-.timeAndLocation {
-  font-size: 0.9rem;
-  color: var(--color-mid-gray);
-}
-
-.icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 5px;
+    &.email,
+    &.phone,
+    &.address {
+      display: none;
+    }
+  }
 }
 
 [data-theme="darkGray"] .icon,
@@ -84,14 +100,22 @@ section {
   color: white;
 }
 
-.label {
-  font-weight: 700;
+section {
+  padding: 0 10px;
 
-  &.email,
-  &.phone,
-  &.address {
-    display: none;
+  &.personalInfo {
+    padding: 10px;
   }
+}
+
+.sectionHeader {
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.timeAndLocation {
+  font-size: var(--rendered-font-small);
+  color: var(--color-mid-gray);
 }
 
 .sectionHeader,
@@ -103,8 +127,7 @@ section {
 
 .sectionHeader,
 .educationItemHeader,
-.experienceItemHeader,
-.fullName {
+.experienceItemHeader {
   margin: 1rem 0 0.5rem 0;
 }
 
@@ -116,4 +139,20 @@ section {
 .position,
 .title {
   font-weight: 600;
+}
+
+@media (min-width: 600px) {
+  .personalInfo {
+    .label {
+      &.email,
+      &.phone,
+      &.address {
+        display: block;
+      }
+    }
+
+    .icon {
+      display: none;
+    }
+  }
 }
