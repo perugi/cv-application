@@ -28,6 +28,10 @@
   &.expanded {
     transform: rotate(180deg);
     background-color: var(--color-highlight);
+
+    &:hover {
+      background-color: var(--color-highlight-2);
+    }
   }
 }
 
@@ -61,12 +65,12 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
 
-button:hover {
-  background-color: var(--color-highlight-2);
-}
+  &:hover {
+    background-color: var(--color-highlight-2);
+  }
 
-button:active {
-  background-color: var(--color-highlight);
+  &:active {
+    background-color: var(--color-highlight);
+  }
 }

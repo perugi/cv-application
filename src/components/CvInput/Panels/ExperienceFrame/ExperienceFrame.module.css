@@ -22,11 +22,15 @@
   margin-left: auto;
   flex-shrink: 0;
   transition: transform 0.2s ease-in-out;
-}
 
-.expand.expanded {
-  transform: rotate(180deg);
-  background-color: var(--color-highlight);
+  &.expanded {
+    transform: rotate(180deg);
+    background-color: var(--color-highlight);
+
+    &:hover {
+      background-color: var(--color-highlight-2);
+    }
+  }
 }
 
 .content {
@@ -64,7 +68,7 @@
 
 .incomplete {
   color: var(--color-warning);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .organization {
