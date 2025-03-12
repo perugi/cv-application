@@ -1,5 +1,9 @@
-import styles from "./RenderedCv.module.css";
 import { Fragment } from "react";
+
+import emailIcon from "../../assets/email.svg";
+import phoneIcon from "../../assets/phone.svg";
+import homeIcon from "../../assets/home.svg";
+import styles from "./RenderedCv.module.css";
 
 function formatDate(dateString) {
   if (dateString === "Present") return dateString;
@@ -79,11 +83,7 @@ export default function RenderedCv({ cvData, cvControl }) {
           )}
           {sortedData.personalInfo.email && (
             <p>
-              <img
-                src="./src/assets/email.svg"
-                alt=""
-                className={styles.icon}
-              />
+              <img src={emailIcon} alt="" className={styles.icon} />
               <span id="email" className={`${styles.label} ${styles.email}`}>
                 Email address:&nbsp;
               </span>
@@ -98,11 +98,7 @@ export default function RenderedCv({ cvData, cvControl }) {
           )}
           {sortedData.personalInfo.phone && (
             <p>
-              <img
-                src="./src/assets/phone.svg"
-                alt=""
-                className={styles.icon}
-              />
+              <img src={phoneIcon} alt="" className={styles.icon} />
               <span id="phone" className={`${styles.label} ${styles.phone}`}>
                 Phone number:&nbsp;
               </span>
@@ -113,7 +109,7 @@ export default function RenderedCv({ cvData, cvControl }) {
           )}
           {sortedData.personalInfo.address && (
             <p>
-              <img src="./src/assets/home.svg" alt="" className={styles.icon} />
+              <img src={homeIcon} alt="" className={styles.icon} />
               <span
                 id="address"
                 className={`${styles.label} ${styles.address}`}

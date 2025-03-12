@@ -54,21 +54,21 @@ export default function CvControl({ cvControl, setCvControl, setCvData }) {
           <div className={styles.buttonGroup}>
             <button
               className={`${styles.controlButton} ${
-                cvControl.layout === "top" ? styles.active : ""
-              }`}
-              aria-label="Personal information on top"
-              onClick={() => handleButtonClick("layout", "top")}
-            >
-              Top
-            </button>
-            <button
-              className={`${styles.controlButton} ${
                 cvControl.layout === "left" ? styles.active : ""
               }`}
               aria-label="Personal information on left"
               onClick={() => handleButtonClick("layout", "left")}
             >
               Left
+            </button>
+            <button
+              className={`${styles.controlButton} ${
+                cvControl.layout === "top" ? styles.active : ""
+              }`}
+              aria-label="Personal information on top"
+              onClick={() => handleButtonClick("layout", "top")}
+            >
+              Top
             </button>
             <button
               className={`${styles.controlButton} ${
