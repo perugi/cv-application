@@ -1,4 +1,4 @@
-# battleship
+# cv-application
 A small React application where users can input their information and generate a CV/résumé.
 
 💻 [Live Demo](https://cv-application-e25.pages.dev/) 💻
