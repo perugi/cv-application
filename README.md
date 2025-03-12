@@ -1,8 +1,19 @@
-# React + Vite
+# battleship
+A small React application where users can input their information and generate a CV/résumé.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+💻 [Live Demo](https://cv-application-e25.pages.dev/) 💻
 
-Currently, two official plugins are available:
+![screenshot](https://github.com/user-attachments/assets/e05530f7-f4a5-4a85-b40c-f03ef9b283fc)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💡 Features
+- Input personal information and work/education experience (add/remove items).
+- Live rendering of the CV, as the data is input by the user.
+- Control of rendered CV - layout, color theme, font size and sorting of experiences.
+- Rendered CV roughly styled based on the Europass format.
+- Fully responsive down to mobile screen widths.
+
+## 🛠️ Technologies, Tools, Design Approaches
+- Vite + React
+- CSS Modules
+- Usage of React state and props, including passing component children as props.
+- uuid library used for generation of component keys.
