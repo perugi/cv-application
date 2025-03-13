@@ -1,14 +1,18 @@
 import styles from "./Input.module.css";
+import { forwardRef } from "react";
 
-export default function Input({
-  type = "text",
-  id,
-  label,
-  value,
-  onChange,
-  togglePresent = () => {},
-  endDateIsPresent = false,
-}) {
+const Input = forwardRef(function Input(
+  {
+    type = "text",
+    id,
+    label,
+    value,
+    onChange,
+    togglePresent = () => {},
+    endDateIsPresent = false,
+  },
+  ref
+) {
   let content;
   if (type === "textarea") {
     content = (
@@ -60,6 +64,7 @@ export default function Input({
           placeholder=" "
           value={value}
           onChange={onChange}
+          ref={ref}
         />
         <label className={styles.inputLabel} htmlFor={id}>
           {label}
@@ -69,4 +74,6 @@ export default function Input({
   }
 
   return <div className={styles.inputContainer}>{content}</div>;
-}
+});
+
+export default Input;

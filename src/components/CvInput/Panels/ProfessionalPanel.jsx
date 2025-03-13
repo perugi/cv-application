@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { flushSync } from "react-dom";
 import { v4 as uuidv4 } from "uuid";
 
 import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
@@ -7,6 +8,7 @@ import Input from "./Input/Input";
 
 export default function ProfessionalPanel({ professional, setCvData }) {
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const inputRef = useRef(null);
 
   function handleExpand(index) {
     setExpandedIndex((prev) => (prev === index ? null : index));
@@ -40,26 +42,33 @@ export default function ProfessionalPanel({ professional, setCvData }) {
         (_, index) => index !== removedIndex
       ),
     }));
+
+    setExpandedIndex(null);
   }
 
   function addProfessionalItem() {
-    setCvData((prev) => ({
-      ...prev,
-      professional: [
-        ...prev.professional,
-        {
-          id: uuidv4(),
-          employer: "",
-          position: "",
-          startDate: "",
-          endDate: "",
-          location: "",
-          description: "",
-        },
-      ],
-    }));
+    flushSync(() => {
+      setCvData((prev) => ({
+        ...prev,
+        professional: [
+          ...prev.professional,
+          {
+            id: uuidv4(),
+            organization: "",
+            title: "",
+            startDate: "",
+            endDate: "",
+            endDateIsPresent: false,
+            location: "",
+            description: "",
+          },
+        ],
+      }));
 
-    setExpandedIndex(professional.length);
+      setExpandedIndex(professional.length);
+    });
+
+    inputRef.current.focus();
   }
 
   return (
@@ -79,6 +88,7 @@ export default function ProfessionalPanel({ professional, setCvData }) {
             label="Employer"
             value={job.organization}
             onChange={handleChange}
+            ref={expandedIndex === index ? inputRef : null}
           />
           <Input
             type="text"

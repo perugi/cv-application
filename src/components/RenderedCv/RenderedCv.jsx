@@ -41,8 +41,6 @@ function renderExperienceItem(exp) {
 }
 
 export default function RenderedCv({ cvData, cvControl }) {
-  // TODO implement effect of cvControl on rendered CV.
-
   function sortExperience(a, b, sorting) {
     if (sorting === "newestFirst") {
       return new Date(b.startDate) - new Date(a.startDate);

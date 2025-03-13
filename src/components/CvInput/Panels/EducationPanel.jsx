@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { flushSync } from "react-dom";
 import { v4 as uuidv4 } from "uuid";
 
 import ExperiencesFrame from "./ExperiencesFrame/ExperiencesFrame";
@@ -6,10 +7,8 @@ import ExperienceFrame from "./ExperienceFrame/ExperienceFrame";
 import Input from "./Input/Input";
 
 export default function EducationPanel({ education, setCvData }) {
-  // TODO add useEffect with ref to give focus to the expanded item (improve keyboard accessibility when adding a new item)
-  // TODO add useEffect to scroll to the expanded item (improve keyboard accessibility when adding a new item)
-
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const inputRef = useRef(null);
 
   function handleExpand(index) {
     setExpandedIndex((prev) => (prev === index ? null : index));
@@ -48,23 +47,27 @@ export default function EducationPanel({ education, setCvData }) {
   }
 
   function addEducationItem() {
-    setCvData((prev) => ({
-      ...prev,
-      education: [
-        ...prev.education,
-        {
-          id: uuidv4(),
-          institution: "",
-          title: "",
-          startDate: "",
-          endDate: "",
-          location: "",
-          description: "",
-        },
-      ],
-    }));
+    flushSync(() => {
+      setCvData((prev) => ({
+        ...prev,
+        education: [
+          ...prev.education,
+          {
+            id: uuidv4(),
+            organization: "",
+            title: "",
+            startDate: "",
+            endDate: "",
+            location: "",
+            description: "",
+          },
+        ],
+      }));
 
-    setExpandedIndex(education.length);
+      setExpandedIndex(education.length);
+    });
+
+    inputRef.current.focus();
   }
 
   return (
@@ -84,6 +87,7 @@ export default function EducationPanel({ education, setCvData }) {
             label="Institution"
             value={school.organization}
             onChange={handleChange}
+            ref={expandedIndex === index ? inputRef : null}
           />
           <Input
             type="text"
