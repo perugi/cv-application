@@ -10,7 +10,7 @@ export default function ProfessionalPanel({ professional, setCvData }) {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const inputRef = useRef(null);
 
-  function handleExpand(index) {
+  function toggleExpand(index) {
     setExpandedIndex((prev) => (prev === index ? null : index));
   }
 
@@ -79,7 +79,7 @@ export default function ProfessionalPanel({ professional, setCvData }) {
           expanded={expandedIndex === index}
           exp={job}
           incompleteWarning="Fill in employer and position!"
-          onExpand={() => handleExpand(index)}
+          onExpand={() => toggleExpand(index)}
           handleRemove={() => removeProfessionalItem(index)}
         >
           <Input

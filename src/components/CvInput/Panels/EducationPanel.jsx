@@ -10,7 +10,7 @@ export default function EducationPanel({ education, setCvData }) {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const inputRef = useRef(null);
 
-  function handleExpand(index) {
+  function toggleExpand(index) {
     setExpandedIndex((prev) => (prev === index ? null : index));
   }
 
@@ -78,7 +78,7 @@ export default function EducationPanel({ education, setCvData }) {
           expanded={expandedIndex === index}
           exp={school}
           incompleteWarning="Fill in institution and title!"
-          onExpand={() => handleExpand(index)}
+          onExpand={() => toggleExpand(index)}
           handleRemove={() => removeEducationItem(index)}
         >
           <Input
